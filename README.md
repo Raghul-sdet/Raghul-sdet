@@ -109,7 +109,7 @@ https://github.com/Raghul-sdet/AI-Test-Engineering-Platform
 
 ## 📫 Connect with Me
 
-- LinkedIn: https://www.linkedin.com/in/your-linkedin-profile
+- LinkedIn: https://www.linkedin.com/in/raghul-l-b46627315/
 - GitHub: https://github.com/Raghul-sdet
 - Email: **raghul.sdet@gmail.com**
 
