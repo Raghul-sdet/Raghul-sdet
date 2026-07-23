@@ -55,3 +55,22 @@ An enterprise AI-powered Test Engineering Platform that streamlines the complete
 | **Database** | SQL, JDBC |
 | **Build & CI/CD** | Maven, Docker, Jenkins |
 | **Version Control** | Git, GitHub |
+---
+
+## 🤝 Connect With Me
+
+<p align="center">
+  <a href="https://www.linkedin.com/in/raghul-l-b46627315/">
+    <img src="https://skillicons.dev/icons?i=linkedin" height="45" alt="LinkedIn"/>
+  </a>
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://github.com/Raghul-sdet">
+    <img src="https://skillicons.dev/icons?i=github" height="45" alt="GitHub"/>
+  </a>
+</p>
+
+<div align="center">
+
+⭐ Thanks for visiting my GitHub profile!
+
+</div>
