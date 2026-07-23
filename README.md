@@ -1,98 +1,123 @@
-<h1 align="center">Hi 👋, I'm Raghul L</h1>
+<div align="center">
 
-<p align="center">
-BCA Graduate • QA Automation • Java • Software Testing
-</p>
+# Hi 👋 I'm Raghul
 
-<p align="center">
-Passionate about building reliable software through quality assurance, automation testing, and modern engineering practices.
-</p>
+### QA Automation • Java • Software Testing
 
-<p align="center">
-<a href="https://www.linkedin.com/in/your-linkedin-id">
-<img src="https://skillicons.dev/icons?i=linkedin" height="40"/>
+Building reliable automation frameworks and AI-powered testing solutions.
+
+<br>
+
+<a href="https://linkedin.com/in/your-linkedin-id">
+<img src="https://skillicons.dev/icons?i=linkedin" height="42"/>
 </a>
-&nbsp;&nbsp;
+
 <a href="https://github.com/Raghul-sdet">
-<img src="https://skillicons.dev/icons?i=github" height="40"/>
+<img src="https://skillicons.dev/icons?i=github" height="42"/>
 </a>
-&nbsp;&nbsp;
+
 <a href="mailto:raghul.sdet@gmail.com">
-<img src="https://img.icons8.com/color/48/gmail-new.png" height="40"/>
+<img src="https://skillicons.dev/icons?i=gmail" height="42"/>
 </a>
+
+</div>
+
+---
+
+# 🚀 Current Focus
+
+I'm currently building an **AI Test Engineering Platform** that combines:
+
+- AI Requirement Analysis
+- Intelligent Test Design
+- Selenium Automation
+- REST API Testing
+- Database Validation
+- CI/CD Automation
+
+---
+
+# 💻 Tech Stack
+
+### Programming
+
+<p>
+<img src="https://skillicons.dev/icons?i=java"/>
+</p>
+
+### Testing
+
+<p>
+<img src="https://skillicons.dev/icons?i=selenium"/>
+</p>
+
+`Manual Testing` • `TestNG` • `REST Assured`
+
+### Database
+
+<p>
+<img src="https://skillicons.dev/icons?i=mysql"/>
+</p>
+
+`SQL` • `JDBC`
+
+### Tools
+
+<p>
+<img src="https://skillicons.dev/icons?i=git,github,maven,docker,jenkins,vscode,idea"/>
 </p>
 
 ---
 
-# 👨‍💻 About Me
-
-- 🎓 Bachelor of Computer Applications (BCA)
-- 💼 Former Alarm FMC Executive (24×7 Operations)
-- 💻 Passionate about QA Automation, Software Testing and Java
-- 🚀 Building automation frameworks and continuously improving testing skills
-- 📍 Chennai, Tamil Nadu, India
-
----
-
-# 💻 Core Skills
-
-| Category | Technologies |
-|----------|--------------|
-| ☕ Programming | Java |
-| 🧪 Testing | Manual Testing • Selenium WebDriver • TestNG • REST Assured |
-| 🗄 Database | SQL • JDBC |
-| ⚙️ Build Tool | Maven |
-| 🔧 Version Control | Git • GitHub |
-| 🚀 CI/CD | GitHub Actions • Jenkins |
-| 🐳 Containerization | Docker |
-
-### Technology Stack
-
-<p align="left">
-<img src="https://skillicons.dev/icons?i=java,git,github,maven,docker,jenkins,vscode,idea" />
-</p>
-
----
-
-# 🚀 Featured Project
+# 📌 Featured Project
 
 ## AI Test Engineering Platform
 
-Enterprise AI-powered Test Engineering Platform developed using Java 17 that combines AI-assisted requirement analysis with UI, API, and Database automation.
+Enterprise QA Automation Platform built using **Java 17**.
 
 ### Highlights
 
-- 🤖 AI Requirement Analysis
-- 📝 AI Test Scenario Generation
-- ✅ AI Test Case Generation
+- 🤖 AI-powered Requirement Analysis
+- 📝 AI Test Case Generation
 - 🌐 Selenium WebDriver Automation
-- 🔗 REST Assured API Automation
+- 🔗 REST Assured API Testing
 - 🗄 JDBC Database Validation
-- 📊 Enterprise Excel Report Generation
+- 📊 Enterprise Excel Reports
 - 📈 Allure Reporting
 - ⚙ GitHub Actions CI/CD
-- 🚀 Jenkins Integration
-- 🐳 Docker Support
+- 🐳 Docker
+- 🚀 Jenkins
 
 ### Repository
 
-🔗 https://github.com/Raghul-sdet/AI-Test-Engineering-Platform
+**🔗 https://github.com/Raghul-sdet/AI-Test-Engineering-Platform**
 
 ---
 
-# 📫 Connect With Me
-
-💼 LinkedIn  
-https://www.linkedin.com/in/your-linkedin-id
-
-💻 GitHub  
-https://github.com/Raghul-sdet
-
-📧 Email  
-raghul.sdet@gmail.com
-
----
+# 📈 GitHub Stats
 
 <p align="center">
-⭐ Thank you for visiting my GitHub profile.
+
+<img height="170" src="https://github-readme-stats.vercel.app/api?username=Raghul-sdet&show_icons=true&hide_border=true&theme=transparent"/>
+
+<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Raghul-sdet&layout=compact&hide_border=true&theme=transparent"/>
+
 </p>
+
+---
+
+# 📫 Connect
+
+📧 **raghul.sdet@gmail.com**
+
+💼 **LinkedIn**
+
+https://linkedin.com/in/your-linkedin-id
+
+---
+
+<div align="center">
+
+⭐ Thanks for visiting my profile!
+
+</div>
