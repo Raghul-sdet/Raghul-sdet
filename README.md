@@ -1,123 +1,122 @@
 <div align="center">
 
-# Hi 👋 I'm Raghul
+<img src="https://capsule-render.vercel.app/api?type=waving&height=250&color=gradient&text=Raghul%20L&fontAlign=50&fontAlignY=40&fontSize=48&desc=QA%20Automation%20|%20Java%20|%20Software%20Testing&descAlign=50&descAlignY=62"/>
 
-### QA Automation • Java • Software Testing
-
-Building reliable automation frameworks and AI-powered testing solutions.
-
-<br>
-
-<a href="https://linkedin.com/in/your-linkedin-id">
-<img src="https://skillicons.dev/icons?i=linkedin" height="42"/>
-</a>
-
-<a href="https://github.com/Raghul-sdet">
-<img src="https://skillicons.dev/icons?i=github" height="42"/>
-</a>
-
-<a href="mailto:raghul.sdet@gmail.com">
-<img src="https://skillicons.dev/icons?i=gmail" height="42"/>
-</a>
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=24&duration=3500&pause=1000&center=true&vCenter=true&width=700&lines=QA+Automation+Engineer;Java+Developer;Building+AI+Test+Engineering+Platform)](https://git.io/typing-svg)
 
 </div>
 
 ---
 
-# 🚀 Current Focus
+# 👋 About Me
 
-I'm currently building an **AI Test Engineering Platform** that combines:
+```java
+public class Raghul {
 
-- AI Requirement Analysis
-- Intelligent Test Design
-- Selenium Automation
-- REST API Testing
-- Database Validation
-- CI/CD Automation
+    String education = "Bachelor of Computer Applications";
+    String location = "Chennai, India";
+
+    String[] interests = {
+        "QA Automation",
+        "Software Testing",
+        "Java Development"
+    };
+
+}
+```
+
+---
+
+# 🚀 Current Project
+
+## AI Test Engineering Platform
+
+Enterprise AI-powered QA Automation Framework that combines
+
+- 🤖 AI Requirement Analysis
+- 📝 AI Test Case Generation
+- 🌐 Selenium Automation
+- 🔗 REST API Testing
+- 🗄 Database Validation
+- 📊 Enterprise Excel Reports
+- ⚙ GitHub Actions
+- 🚀 Jenkins
+- 🐳 Docker
 
 ---
 
 # 💻 Tech Stack
 
-### Programming
+<div align="center">
 
-<p>
-<img src="https://skillicons.dev/icons?i=java"/>
-</p>
+<img src="https://skillicons.dev/icons?i=java,git,github,maven,docker,jenkins,vscode,idea,mysql"/>
 
-### Testing
+</div>
 
-<p>
-<img src="https://skillicons.dev/icons?i=selenium"/>
-</p>
+<br>
 
-`Manual Testing` • `TestNG` • `REST Assured`
+<div align="center">
 
-### Database
+<img src="https://img.shields.io/badge/Selenium-43B02A?style=flat-square&logo=selenium&logoColor=white"/>
 
-<p>
-<img src="https://skillicons.dev/icons?i=mysql"/>
-</p>
+<img src="https://img.shields.io/badge/TestNG-EA4335?style=flat-square"/>
 
-`SQL` • `JDBC`
+<img src="https://img.shields.io/badge/REST%20Assured-009688?style=flat-square"/>
 
-### Tools
+<img src="https://img.shields.io/badge/Manual%20Testing-2563EB?style=flat-square"/>
 
-<p>
-<img src="https://skillicons.dev/icons?i=git,github,maven,docker,jenkins,vscode,idea"/>
-</p>
+<img src="https://img.shields.io/badge/SQL-336791?style=flat-square"/>
+
+<img src="https://img.shields.io/badge/JDBC-FF6F00?style=flat-square"/>
+
+</div>
 
 ---
 
-# 📌 Featured Project
+# 📌 Featured Repository
 
-## AI Test Engineering Platform
+### 🤖 AI Test Engineering Platform
 
-Enterprise QA Automation Platform built using **Java 17**.
+> Enterprise AI-powered automation framework developed using Java 17.
 
-### Highlights
+🔗 **Repository**
 
-- 🤖 AI-powered Requirement Analysis
-- 📝 AI Test Case Generation
-- 🌐 Selenium WebDriver Automation
-- 🔗 REST Assured API Testing
-- 🗄 JDBC Database Validation
-- 📊 Enterprise Excel Reports
-- 📈 Allure Reporting
-- ⚙ GitHub Actions CI/CD
-- 🐳 Docker
-- 🚀 Jenkins
-
-### Repository
-
-**🔗 https://github.com/Raghul-sdet/AI-Test-Engineering-Platform**
+https://github.com/Raghul-sdet/AI-Test-Engineering-Platform
 
 ---
 
-# 📈 GitHub Stats
+# 📈 GitHub Statistics
 
-<p align="center">
+<div align="center">
 
-<img height="170" src="https://github-readme-stats.vercel.app/api?username=Raghul-sdet&show_icons=true&hide_border=true&theme=transparent"/>
+<img height="170" src="https://github-readme-stats.vercel.app/api?username=Raghul-sdet&show_icons=true&theme=transparent&hide_border=true"/>
 
-<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Raghul-sdet&layout=compact&hide_border=true&theme=transparent"/>
+<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Raghul-sdet&layout=compact&theme=transparent&hide_border=true"/>
 
-</p>
+</div>
 
 ---
 
 # 📫 Connect
 
-📧 **raghul.sdet@gmail.com**
+<p align="center">
 
-💼 **LinkedIn**
+<a href="https://www.linkedin.com/in/your-linkedin-id">
+<img src="https://skillicons.dev/icons?i=linkedin" height="45"/>
+</a>
 
-https://linkedin.com/in/your-linkedin-id
+&nbsp;&nbsp;
+
+<a href="mailto:raghul.sdet@gmail.com">
+<img src="https://img.icons8.com/color/48/gmail-new.png" height="45"/>
+</a>
+
+</p>
 
 ---
 
 <div align="center">
 
-⭐ Thanks for visiting my profile!
+⭐ Thanks for visiting my profile.
 
 </div>
