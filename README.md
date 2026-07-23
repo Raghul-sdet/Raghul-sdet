@@ -1,87 +1,90 @@
 <div align="center">
 
-<img width="100%" src="assets/banner.svg"/>
+# Raghul L
 
-<br>
+### QA Automation Engineer
 
-<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=24&pause=1500&color=4F9DFF&center=true&vCenter=true&width=700&lines=QA+Automation+Engineer;Java+Developer;Building+AI+Test+Engineering+Platform"/>
+Building AI-powered Test Engineering solutions using Java and Automation.
 
-<br><br>
-
+<p>
 <a href="https://www.linkedin.com/in/raghul-l-b46627315/">
-<img height="42" src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
+<img src="https://skillicons.dev/icons?i=linkedin" height="40"/>
 </a>
-
+&nbsp;&nbsp;
 <a href="https://github.com/Raghul-sdet">
-<img height="42" src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github"/>
+<img src="https://skillicons.dev/icons?i=github" height="40"/>
 </a>
+</p>
+
+<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=500&size=22&duration=3000&pause=1200&color=38BDF8&center=true&vCenter=true&width=650&lines=QA+Automation+Engineer;Java+Developer;Building+AI+Test+Engineering+Platform"/>
 
 </div>
 
 ---
 
-## 🚀 Current Focus
+# 🚀 Featured Project
 
-Building an enterprise AI-powered Test Engineering Platform that combines intelligent requirement analysis, automation testing and scalable QA engineering.
+## AI Test Engineering Platform
+
+Enterprise AI-powered Test Engineering Platform that automates requirement analysis, intelligent test design, UI automation, API testing, database validation and reporting.
+
+🔗 **Repository**
+
+**https://github.com/Raghul-sdet/AI-Test-Engineering-Platform**
 
 ---
 
-## 💻 Technology
+# 💻 Tech Stack
 
 <p align="center">
-
-<img src="https://skillicons.dev/icons?i=java"/>
-
-<img src="https://skillicons.dev/icons?i=git"/>
-
-<img src="https://skillicons.dev/icons?i=github"/>
-
-<img src="https://skillicons.dev/icons?i=maven"/>
-
-<img src="https://skillicons.dev/icons?i=docker"/>
-
-<img src="https://skillicons.dev/icons?i=jenkins"/>
-
-<img src="https://skillicons.dev/icons?i=mysql"/>
-
+<img src="https://skillicons.dev/icons?i=java,git,github,maven,docker,jenkins,mysql,idea,vscode"/>
 </p>
 
 <p align="center">
 
-Manual Testing • Selenium • TestNG • REST Assured • JDBC
+Manual Testing • Selenium • TestNG • REST Assured • SQL • JDBC
 
 </p>
 
 ---
 
-## 🚀 Featured Project
+# 🌱 Currently Learning
 
-<p align="center">
+- Advanced Selenium Automation
+- Enterprise Test Framework Design
+- AI Test Engineering
+- CI/CD Best Practices
 
-<img width="100%" src="assets/ai-platform.png"/>
+---
 
-</p>
+# 📌 About Me
 
-### AI Test Engineering Platform
+```java
+public class Raghul {
 
-Enterprise automation framework built using Java.
+    String role = "QA Automation Engineer";
 
-- AI Requirement Analysis
-- Selenium Automation
-- REST API Testing
-- Database Validation
-- GitHub Actions
-- Docker
-- Jenkins
+    String focus =
+        "Building reliable automation frameworks";
 
-🔗 Repository
+    String project =
+        "AI Test Engineering Platform";
 
-https://github.com/Raghul-sdet/AI-Test-Engineering-Platform
+}
+```
 
 ---
 
 <div align="center">
 
-Made with ❤️ using Java & Automation
+### 🤝 Let's Connect
+
+<a href="https://www.linkedin.com/in/raghul-l-b46627315/">
+<img src="https://skillicons.dev/icons?i=linkedin" height="45"/>
+</a>
+
+<a href="https://github.com/Raghul-sdet">
+<img src="https://skillicons.dev/icons?i=github" height="45"/>
+</a>
 
 </div>
