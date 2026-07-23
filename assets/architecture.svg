@@ -1,5 +1,460 @@
-## 🏗 Architecture
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 700" width="1400" height="700">
+  <defs>
+    <!-- Core Styling & Animations -->
+    <style>
+      @keyframes gradientShift {
+        0% { stop-color: #1E293B; }
+        50% { stop-color: #0F172A; }
+        100% { stop-color: #1E293B; }
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+      }
+      @keyframes pulseGlow {
+        0%, 100% { filter: drop-shadow(0 0 8px rgba(56,189,248,0.4)); transform: scale(1); }
+        50% { filter: drop-shadow(0 0 16px rgba(56,189,248,0.8)); transform: scale(1.02); }
+      }
+      @keyframes lineFlow {
+        from { stroke-dashoffset: 400; }
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes particleMove {
+        0% { opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { opacity: 0; }
+      }
+      @keyframes sweepBeam {
+        0% { transform: translateX(-400px) skewX(-30deg); }
+        40%, 100% { transform: translateX(1800px) skewX(-30deg); }
+      }
+      @keyframes orbit {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
 
-<p align="center">
-  <img src="assets/architecture.svg" width="100%">
-</p>
+      .text-title {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 800;
+        font-size: 32px;
+        letter-spacing: -0.5px;
+        fill: #F8FAFC;
+      }
+      .text-subtitle {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        fill: #38BDF8;
+      }
+      .text-panel {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-weight: 600;
+        font-size: 13px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        fill: #94A3B8;
+      }
+      .text-node {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: 0.2px;
+        fill: #F8FAFC;
+        pointer-events: none;
+      }
+      .text-badge {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-weight: 600;
+        font-size: 12px;
+        fill: #CBD5E1;
+      }
+
+      .line-animated {
+        fill: none;
+        stroke: #2563EB;
+        stroke-width: 2;
+        stroke-dasharray: 6 6;
+        animation: lineFlow 10s linear infinite;
+      }
+      .line-solid {
+        fill: none;
+        stroke: rgba(37,99,235,0.4);
+        stroke-width: 2;
+      }
+      .float-layer { animation: float 6s ease-in-out infinite; }
+      .float-layer-alt { animation: float 7s ease-in-out infinite reverse; }
+      
+      .node-box {
+        transition: all 0.3s ease;
+      }
+    </style>
+
+    <!-- Gradients -->
+    <linearGradient id="bg-base" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617" />
+      <stop offset="50%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+
+    <linearGradient id="glass-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.04" />
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.01" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.03" />
+    </linearGradient>
+
+    <linearGradient id="glass-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.4" />
+      <stop offset="50%" stop-color="#2563EB" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.3" />
+    </linearGradient>
+
+    <linearGradient id="node-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.9" />
+    </linearGradient>
+
+    <linearGradient id="node-active" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563EB" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.2" />
+    </linearGradient>
+
+    <radialGradient id="glow-ambient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#020617" stop-opacity="0" />
+    </radialGradient>
+
+    <linearGradient id="light-beam" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0" />
+      <stop offset="50%" stop-color="#38BDF8" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="glow-strong" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="shadow-soft" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.5" />
+    </filter>
+
+    <filter id="blur-bg" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="40" />
+    </filter>
+
+    <!-- Arrow Marker -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#38BDF8" />
+    </marker>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="1400" height="700" fill="url(#bg-base)" />
+
+  <!-- Ambient Glow Orbs -->
+  <g filter="url(#blur-bg)">
+    <circle cx="200" cy="150" r="250" fill="url(#glow-ambient)" />
+    <circle cx="1200" cy="450" r="300" fill="url(#glow-ambient)" />
+    <circle cx="700" cy="350" r="250" fill="url(#glow-ambient)" opacity="0.6" />
+  </g>
+
+  <!-- High-Tech Grid Overlay -->
+  <g opacity="0.04" stroke="#38BDF8" stroke-width="1">
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" />
+    </pattern>
+    <rect width="1400" height="700" fill="url(#grid)" />
+  </g>
+
+  <!-- Moving Light Beam -->
+  <rect x="0" y="0" width="120" height="700" fill="url(#light-beam)" style="animation: sweepBeam 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;" />
+
+  <!-- ================= HEADER ================= -->
+  <g transform="translate(700, 50)" text-anchor="middle">
+    <text y="0" class="text-subtitle" style="animation: pulseGlow 4s infinite;">Enterprise AI-powered Test Engineering Architecture</text>
+    <text y="40" class="text-title">AI Test Engineering Platform</text>
+  </g>
+
+  <!-- ================= MAIN ARCHITECTURE ================= -->
+  
+  <!-- CONNECTION PATHS (Rendered behind nodes) -->
+  <g>
+    <!-- Phase 1 Internal Vertical Lines -->
+    <path class="line-solid" d="M 230 194 L 230 220" />
+    <path class="line-animated" d="M 230 194 L 230 220" />
+    <path class="line-solid" d="M 230 264 L 230 290" />
+    <path class="line-animated" d="M 230 264 L 230 290" />
+    <path class="line-solid" d="M 230 334 L 230 360" />
+    <path class="line-animated" d="M 230 334 L 230 360" />
+    <path class="line-solid" d="M 230 404 L 230 430" />
+    <path class="line-animated" d="M 230 404 L 230 430" />
+    <path class="line-solid" d="M 230 474 L 230 500" />
+    <path class="line-animated" d="M 230 474 L 230 500" />
+
+    <!-- Phase 2 Internal Horizontal Lines -->
+    <path class="line-solid" d="M 670 262 L 720 262" marker-end="url(#arrow)" />
+    <path class="line-animated" d="M 670 262 L 720 262" />
+    <path class="line-solid" d="M 670 372 L 720 372" marker-end="url(#arrow)" />
+    <path class="line-animated" d="M 670 372 L 720 372" />
+    <path class="line-solid" d="M 670 482 L 720 482" marker-end="url(#arrow)" />
+    <path class="line-animated" d="M 670 482 L 720 482" />
+
+    <!-- Phase 3 Internal Vertical Line -->
+    <path class="line-solid" d="M 1170 374 L 1170 410" marker-end="url(#arrow)" />
+    <path class="line-animated" d="M 1170 374 L 1170 410" />
+
+    <!-- Col 1 to Col 2 Branching Paths -->
+    <!-- Define path strings for animation reference -->
+    <path id="path-bus-1" class="line-solid" d="M 350 522 L 400 522 Q 420 522 420 502 L 420 262 Q 420 242 440 242 L 510 242" marker-end="url(#arrow)" />
+    <path class="line-animated" d="M 350 522 L 400 522 Q 420 522 420 502 L 420 262 Q 420 242 440 242 L 510 242" />
+
+    <path id="path-bus-2" class="line-solid" d="M 350 522 L 400 522 Q 420 522 420 502 L 420 372 Q 420 352 440 352 L 510 352" marker-end="url(#arrow)" />
+    <path class="line-animated" d="M 350 522 L 400 522 Q 420 522 420 502 L 420 372 Q 420 352 440 352 L 510 352" />
+
+    <path id="path-bus-3" class="line-solid" d="M 350 522 L 400 522 Q 420 522 420 502 L 420 482 Q 420 462 440 462 L 510 462" marker-end="url(#arrow)" />
+    <path class="line-animated" d="M 350 522 L 400 522 Q 420 522 420 502 L 420 482 Q 420 462 440 462 L 510 462" />
+
+    <!-- Col 2 to Col 3 Merging Paths -->
+    <path id="path-merge-1" class="line-solid" d="M 870 262 L 950 262 Q 970 262 970 282 L 970 332 Q 970 352 990 352 L 1040 352" marker-end="url(#arrow)" />
+    <path class="line-animated" d="M 870 262 L 950 262 Q 970 262 970 282 L 970 332 Q 970 352 990 352 L 1040 352" />
+
+    <path id="path-merge-2" class="line-solid" d="M 870 352 L 1040 352" marker-end="url(#arrow)" />
+    <path class="line-animated" d="M 870 352 L 1040 352" />
+
+    <path id="path-merge-3" class="line-solid" d="M 870 482 L 950 482 Q 970 482 970 462 L 970 372 Q 970 352 990 352 L 1040 352" marker-end="url(#arrow)" />
+    <path class="line-animated" d="M 870 482 L 950 482 Q 970 482 970 462 L 970 372 Q 970 352 990 352 L 1040 352" />
+  </g>
+
+  <!-- Data Flow Particles -->
+  <g filter="url(#glow-strong)">
+    <!-- Particles Col 1 to 2 -->
+    <circle r="4" fill="#38BDF8">
+      <animateMotion dur="4s" repeatCount="indefinite" path="M 350 522 L 400 522 Q 420 522 420 502 L 420 262 Q 420 242 440 242 L 510 242" />
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle r="4" fill="#38BDF8">
+      <animateMotion dur="3s" repeatCount="indefinite" path="M 350 522 L 400 522 Q 420 522 420 502 L 420 372 Q 420 352 440 352 L 510 352" />
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <circle r="4" fill="#38BDF8">
+      <animateMotion dur="2s" repeatCount="indefinite" path="M 350 522 L 400 522 Q 420 522 420 502 L 420 482 Q 420 462 440 462 L 510 462" />
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="2s" repeatCount="indefinite" />
+    </circle>
+
+    <!-- Particles Col 2 to 3 -->
+    <circle r="4" fill="#38BDF8">
+      <animateMotion dur="3s" repeatCount="indefinite" path="M 870 262 L 950 262 Q 970 262 970 282 L 970 332 Q 970 352 990 352 L 1040 352" />
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <circle r="4" fill="#38BDF8">
+      <animateMotion dur="2s" repeatCount="indefinite" path="M 870 352 L 1040 352" />
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle r="4" fill="#38BDF8">
+      <animateMotion dur="3.5s" repeatCount="indefinite" path="M 870 482 L 950 482 Q 970 482 970 462 L 970 372 Q 970 352 990 352 L 1040 352" />
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="3.5s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <!-- ================= COLUMN 1: AI PLANNING ================= -->
+  <g transform="translate(80, 110)" class="float-layer">
+    <!-- Glass Panel -->
+    <rect width="300" height="470" rx="24" fill="url(#glass-bg)" stroke="url(#glass-border)" stroke-width="1.5" filter="url(#shadow-soft)" />
+    <!-- Top Edge Highlight -->
+    <path d="M 24 1 L 276 1" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="1.5" stroke-linecap="round" />
+    
+    <text x="150" y="30" class="text-panel" text-anchor="middle">Phase 1: AI Planning</text>
+
+    <!-- Nodes -->
+    <g transform="translate(30, 40)">
+      <!-- Business Requirements -->
+      <g class="node-box" transform="translate(0, 0)">
+        <rect width="240" height="44" rx="10" fill="url(#node-gradient)" stroke="#2563EB" stroke-width="1.5" stroke-opacity="0.5" filter="url(#shadow-soft)" />
+        <rect width="240" height="44" rx="10" fill="url(#node-active)" opacity="0" class="hover-pulse" />
+        <text x="120" y="22" dominant-baseline="middle" text-anchor="middle" class="text-node">Business Requirements</text>
+      </g>
+      <!-- Requirement Analysis -->
+      <g class="node-box" transform="translate(0, 70)">
+        <rect width="240" height="44" rx="10" fill="url(#node-gradient)" stroke="#2563EB" stroke-width="1.5" stroke-opacity="0.5" filter="url(#shadow-soft)" />
+        <text x="120" y="22" dominant-baseline="middle" text-anchor="middle" class="text-node">Requirement Analysis</text>
+      </g>
+      <!-- AI Scenario Generation -->
+      <g class="node-box" transform="translate(0, 140)">
+        <rect width="240" height="44" rx="10" fill="url(#node-gradient)" stroke="#38BDF8" stroke-width="2" stroke-opacity="0.8" filter="url(#glow-strong)" />
+        <text x="120" y="22" dominant-baseline="middle" text-anchor="middle" class="text-node">AI Scenario Generation</text>
+      </g>
+      <!-- AI Test Case Generation -->
+      <g class="node-box" transform="translate(0, 210)">
+        <rect width="240" height="44" rx="10" fill="url(#node-gradient)" stroke="#38BDF8" stroke-width="2" stroke-opacity="0.8" filter="url(#glow-strong)" />
+        <text x="120" y="22" dominant-baseline="middle" text-anchor="middle" class="text-node">AI Test Case Generation</text>
+      </g>
+      <!-- Enterprise Test Plan -->
+      <g class="node-box" transform="translate(0, 280)">
+        <rect width="240" height="44" rx="10" fill="url(#node-gradient)" stroke="#2563EB" stroke-width="1.5" stroke-opacity="0.5" filter="url(#shadow-soft)" />
+        <text x="120" y="22" dominant-baseline="middle" text-anchor="middle" class="text-node">Enterprise Test Plan</text>
+        <!-- Outgoing Connection Point -->
+        <circle cx="240" cy="22" r="5" fill="#38BDF8" filter="url(#glow-strong)" />
+      </g>
+    </g>
+  </g>
+
+  <!-- ================= COLUMN 2: EXECUTION TRACKS ================= -->
+  <g transform="translate(500, 110)" class="float-layer-alt">
+    <!-- Glass Panel -->
+    <rect width="400" height="470" rx="24" fill="url(#glass-bg)" stroke="url(#glass-border)" stroke-width="1.5" filter="url(#shadow-soft)" />
+    <!-- Top Edge Highlight -->
+    <path d="M 24 1 L 376 1" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="1.5" stroke-linecap="round" />
+    
+    <text x="200" y="30" class="text-panel" text-anchor="middle">Phase 2: Execution Tracks</text>
+
+    <!-- Track 1: UI -->
+    <g transform="translate(20, 130)">
+      <!-- Incoming Port -->
+      <circle cx="-10" cy="22" r="4" fill="#38BDF8" />
+      <g class="node-box" transform="translate(0, 0)">
+        <rect width="150" height="44" rx="10" fill="url(#node-gradient)" stroke="#2563EB" stroke-width="1.5" stroke-opacity="0.5" filter="url(#shadow-soft)" />
+        <text x="75" y="22" dominant-baseline="middle" text-anchor="middle" class="text-node">UI Testing</text>
+      </g>
+      <g class="node-box" transform="translate(210, 0)">
+        <rect width="150" height="44" rx="10" fill="url(#node-gradient)" stroke="#3B82F6" stroke-width="1.5" stroke-opacity="0.8" filter="url(#shadow-soft)" />
+        <text x="75" y="22" dominant-baseline="middle" text-anchor="middle" class="text-node">Selenium</text>
+        <!-- Outgoing Port -->
+        <circle cx="160" cy="22" r="4" fill="#38BDF8" />
+      </g>
+    </g>
+
+    <!-- Track 2: API -->
+    <g transform="translate(20, 240)">
+      <circle cx="-10" cy="22" r="4" fill="#38BDF8" />
+      <g class="node-box" transform="translate(0, 0)">
+        <rect width="150" height="44" rx="10" fill="url(#node-gradient)" stroke="#2563EB" stroke-width="1.5" stroke-opacity="0.5" filter="url(#shadow-soft)" />
+        <text x="75" y="22" dominant-baseline="middle" text-anchor="middle" class="text-node">API Testing</text>
+      </g>
+      <g class="node-box" transform="translate(210, 0)">
+        <rect width="150" height="44" rx="10" fill="url(#node-gradient)" stroke="#3B82F6" stroke-width="1.5" stroke-opacity="0.8" filter="url(#shadow-soft)" />
+        <text x="75" y="22" dominant-baseline="middle" text-anchor="middle" class="text-node">REST Assured</text>
+        <circle cx="160" cy="22" r="4" fill="#38BDF8" />
+      </g>
+    </g>
+
+    <!-- Track 3: Database -->
+    <g transform="translate(20, 350)">
+      <circle cx="-10" cy="22" r="4" fill="#38BDF8" />
+      <g class="node-box" transform="translate(0, 0)">
+        <rect width="150" height="44" rx="10" fill="url(#node-gradient)" stroke="#2563EB" stroke-width="1.5" stroke-opacity="0.5" filter="url(#shadow-soft)" />
+        <text x="75" y="22" dominant-baseline="middle" text-anchor="middle" class="text-node">Database Testing</text>
+      </g>
+      <g class="node-box" transform="translate(210, 0)">
+        <rect width="150" height="44" rx="10" fill="url(#node-gradient)" stroke="#3B82F6" stroke-width="1.5" stroke-opacity="0.8" filter="url(#shadow-soft)" />
+        <text x="75" y="22" dominant-baseline="middle" text-anchor="middle" class="text-node">JDBC + SQL</text>
+        <circle cx="160" cy="22" r="4" fill="#38BDF8" />
+      </g>
+    </g>
+  </g>
+
+  <!-- ================= COLUMN 3: INTELLIGENCE ================= -->
+  <g transform="translate(1020, 110)" class="float-layer">
+    <!-- Glass Panel -->
+    <rect width="300" height="470" rx="24" fill="url(#glass-bg)" stroke="url(#glass-border)" stroke-width="1.5" filter="url(#shadow-soft)" />
+    <!-- Top Edge Highlight -->
+    <path d="M 24 1 L 276 1" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="1.5" stroke-linecap="round" />
+    
+    <text x="150" y="30" class="text-panel" text-anchor="middle">Phase 3: Intelligence</text>
+
+    <!-- Nodes -->
+    <g transform="translate(30, 220)">
+      <!-- Execution Engine -->
+      <g class="node-box" transform="translate(0, 0)">
+        <!-- Incoming Merge Port -->
+        <circle cx="-10" cy="22" r="5" fill="#38BDF8" filter="url(#glow-strong)" />
+        <rect width="240" height="44" rx="10" fill="url(#node-gradient)" stroke="#38BDF8" stroke-width="2" stroke-opacity="0.8" filter="url(#glow-strong)" />
+        <text x="120" y="22" dominant-baseline="middle" text-anchor="middle" class="text-node">Execution Engine</text>
+      </g>
+      
+      <!-- Reports & Analytics -->
+      <g class="node-box" transform="translate(0, 90)">
+        <rect width="240" height="44" rx="10" fill="url(#node-gradient)" stroke="#2563EB" stroke-width="1.5" stroke-opacity="0.5" filter="url(#shadow-soft)" />
+        <text x="120" y="22" dominant-baseline="middle" text-anchor="middle" class="text-node">Reports &amp; Analytics</text>
+        <circle cx="120" cy="22" r="30" fill="url(#glow-ambient)" pointer-events="none" />
+      </g>
+    </g>
+  </g>
+
+  <!-- ================= BOTTOM SECTION: TECH STACK ================= -->
+  
+  <g transform="translate(0, 610)">
+    <!-- Row 1 (Center Aligned manually for perfect layout) -->
+    <!-- Total width approx 700. Start X ~350 -->
+    <g transform="translate(290, 0)">
+      <!-- Java -->
+      <g transform="translate(0, 0)">
+        <rect width="80" height="28" rx="14" fill="#0F172A" stroke="#1E293B" stroke-width="1" />
+        <text x="40" y="14" dominant-baseline="middle" text-anchor="middle" class="text-badge">Java</text>
+      </g>
+      <!-- Manual Testing -->
+      <g transform="translate(95, 0)">
+        <rect width="140" height="28" rx="14" fill="#0F172A" stroke="#1E293B" stroke-width="1" />
+        <text x="70" y="14" dominant-baseline="middle" text-anchor="middle" class="text-badge">Manual Testing</text>
+      </g>
+      <!-- Selenium -->
+      <g transform="translate(250, 0)">
+        <rect width="100" height="28" rx="14" fill="#0F172A" stroke="#1E293B" stroke-width="1" />
+        <text x="50" y="14" dominant-baseline="middle" text-anchor="middle" class="text-badge">Selenium</text>
+      </g>
+      <!-- TestNG -->
+      <g transform="translate(365, 0)">
+        <rect width="90" height="28" rx="14" fill="#0F172A" stroke="#1E293B" stroke-width="1" />
+        <text x="45" y="14" dominant-baseline="middle" text-anchor="middle" class="text-badge">TestNG</text>
+      </g>
+      <!-- REST Assured -->
+      <g transform="translate(470, 0)">
+        <rect width="130" height="28" rx="14" fill="#0F172A" stroke="#1E293B" stroke-width="1" />
+        <text x="65" y="14" dominant-baseline="middle" text-anchor="middle" class="text-badge">REST Assured</text>
+      </g>
+      <!-- SQL -->
+      <g transform="translate(615, 0)">
+        <rect width="70" height="28" rx="14" fill="#0F172A" stroke="#1E293B" stroke-width="1" />
+        <text x="35" y="14" dominant-baseline="middle" text-anchor="middle" class="text-badge">SQL</text>
+      </g>
+      <!-- JDBC -->
+      <g transform="translate(700, 0)">
+        <rect width="80" height="28" rx="14" fill="#0F172A" stroke="#1E293B" stroke-width="1" />
+        <text x="40" y="14" dominant-baseline="middle" text-anchor="middle" class="text-badge">JDBC</text>
+      </g>
+    </g>
+
+    <!-- Row 2 -->
+    <g transform="translate(425, 40)">
+      <!-- Maven -->
+      <g transform="translate(0, 0)">
+        <rect width="90" height="28" rx="14" fill="#0F172A" stroke="#1E293B" stroke-width="1" />
+        <text x="45" y="14" dominant-baseline="middle" text-anchor="middle" class="text-badge">Maven</text>
+      </g>
+      <!-- Docker -->
+      <g transform="translate(105, 0)">
+        <rect width="90" height="28" rx="14" fill="#0F172A" stroke="#1E293B" stroke-width="1" />
+        <text x="45" y="14" dominant-baseline="middle" text-anchor="middle" class="text-badge">Docker</text>
+      </g>
+      <!-- Jenkins -->
+      <g transform="translate(210, 0)">
+        <rect width="100" height="28" rx="14" fill="#0F172A" stroke="#1E293B" stroke-width="1" />
+        <text x="50" y="14" dominant-baseline="middle" text-anchor="middle" class="text-badge">Jenkins</text>
+      </g>
+      <!-- Git -->
+      <g transform="translate(325, 0)">
+        <rect width="70" height="28" rx="14" fill="#0F172A" stroke="#1E293B" stroke-width="1" />
+        <text x="35" y="14" dominant-baseline="middle" text-anchor="middle" class="text-badge">Git</text>
+      </g>
+      <!-- GitHub -->
+      <g transform="translate(410, 0)">
+        <rect width="100" height="28" rx="14" fill="#0F172A" stroke="#1E293B" stroke-width="1" />
+        <text x="50" y="14" dominant-baseline="middle" text-anchor="middle" class="text-badge">GitHub</text>
+      </g>
+    </g>
+  </g>
+
+</svg>
