@@ -12,11 +12,11 @@ Passionate about building reliable software through quality assurance, automatio
 <a href="https://www.linkedin.com/in/your-linkedin-id">
 <img src="https://skillicons.dev/icons?i=linkedin" height="40"/>
 </a>
-
+&nbsp;&nbsp;
 <a href="https://github.com/Raghul-sdet">
 <img src="https://skillicons.dev/icons?i=github" height="40"/>
 </a>
-
+&nbsp;&nbsp;
 <a href="mailto:raghul.sdet@gmail.com">
 <img src="https://img.icons8.com/color/48/gmail-new.png" height="40"/>
 </a>
@@ -28,9 +28,29 @@ Passionate about building reliable software through quality assurance, automatio
 
 - 🎓 Bachelor of Computer Applications (BCA)
 - 💼 Former Alarm FMC Executive (24×7 Operations)
-- 💻 Interested in QA Automation, Software Testing & Java
-- 🚀 Building modern automation frameworks using Java and Selenium
+- 💻 Passionate about QA Automation, Software Testing and Java
+- 🚀 Building automation frameworks and continuously improving testing skills
 - 📍 Chennai, Tamil Nadu, India
+
+---
+
+# 💻 Core Skills
+
+| Category | Technologies |
+|----------|--------------|
+| ☕ Programming | Java |
+| 🧪 Testing | Manual Testing • Selenium WebDriver • TestNG • REST Assured |
+| 🗄 Database | SQL • JDBC |
+| ⚙️ Build Tool | Maven |
+| 🔧 Version Control | Git • GitHub |
+| 🚀 CI/CD | GitHub Actions • Jenkins |
+| 🐳 Containerization | Docker |
+
+### Technology Stack
+
+<p align="left">
+<img src="https://skillicons.dev/icons?i=java,git,github,maven,docker,jenkins,vscode,idea" />
+</p>
 
 ---
 
@@ -38,7 +58,7 @@ Passionate about building reliable software through quality assurance, automatio
 
 ## AI Test Engineering Platform
 
-Enterprise AI-powered Test Engineering Platform developed using Java 17.
+Enterprise AI-powered Test Engineering Platform developed using Java 17 that combines AI-assisted requirement analysis with UI, API, and Database automation.
 
 ### Highlights
 
@@ -46,84 +66,33 @@ Enterprise AI-powered Test Engineering Platform developed using Java 17.
 - 📝 AI Test Scenario Generation
 - ✅ AI Test Case Generation
 - 🌐 Selenium WebDriver Automation
-- 🔗 REST API Automation
-- 🗄 Database Validation (JDBC)
+- 🔗 REST Assured API Automation
+- 🗄 JDBC Database Validation
 - 📊 Enterprise Excel Report Generation
 - 📈 Allure Reporting
 - ⚙ GitHub Actions CI/CD
-- 🐳 Docker
-- 🚀 Jenkins
+- 🚀 Jenkins Integration
+- 🐳 Docker Support
 
-🔗 **Repository**
+### Repository
 
-https://github.com/Raghul-sdet/AI-Test-Engineering-Platform
-
----
-
-# 💻 Tech Stack
-
-### ☕ Programming
-
-<p>
-<img src="https://skillicons.dev/icons?i=java"/>
-</p>
+🔗 https://github.com/Raghul-sdet/AI-Test-Engineering-Platform
 
 ---
 
-### 🧪 Testing
+# 📫 Connect With Me
 
-<p>
-<img src="https://skillicons.dev/icons?i=selenium"/>
-<img src="https://cdn.simpleicons.org/testng/FF6C37" height="48"/>
-<img src="https://cdn.simpleicons.org/postman/FF6C37" height="48"/>
-</p>
-
----
-
-### 🗄 Database
-
-<p>
-<img src="https://skillicons.dev/icons?i=mysql"/>
-</p>
-
----
-
-### ⚙ Tools
-
-<p>
-<img src="https://skillicons.dev/icons?i=git,github,maven,docker,jenkins,vscode,idea"/>
-</p>
-
----
-
-# 📌 Core Skills
-
-- Manual Testing
-- Automation Testing
-- Selenium WebDriver
-- TestNG
-- REST API Testing
-- SQL
-- JDBC
-- Maven
-- Git
-- GitHub
-- CI/CD
-
----
-
-# 📫 Connect
-
-📧 **raghul.sdet@gmail.com**
-
-💼 **LinkedIn**
+💼 LinkedIn  
 https://www.linkedin.com/in/your-linkedin-id
 
-💻 **GitHub**
+💻 GitHub  
 https://github.com/Raghul-sdet
+
+📧 Email  
+raghul.sdet@gmail.com
 
 ---
 
 <p align="center">
-⭐ Thanks for visiting my profile!
+⭐ Thank you for visiting my GitHub profile.
 </p>
