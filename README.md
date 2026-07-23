@@ -15,3 +15,6 @@ Building AI-powered Test Engineering Solutions
 </div>
 
 ---
+## 👨‍💻 About Me
+
+I'm a QA Automation Engineer focused on building reliable and scalable automation solutions using Java. I enjoy developing enterprise automation frameworks and continuously improving software quality through efficient testing practices.
