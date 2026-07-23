@@ -1,5 +1,265 @@
-## 💻 Tech Stack
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 350" width="900" height="350">
+  <defs>
+    <style>
+      @keyframes floatCard {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-12px); }
+      }
+      @keyframes pulseAmbient {
+        0%, 100% { transform: scale(1); opacity: 0.4; }
+        50% { transform: scale(1.1); opacity: 0.7; }
+      }
+      @keyframes lightSweep {
+        0% { transform: translateX(-400px) skewX(-30deg); }
+        30%, 100% { transform: translateX(1200px) skewX(-30deg); }
+      }
+      @keyframes floatParticle {
+        0% { transform: translateY(0px) scale(1); opacity: 0; }
+        20% { opacity: 0.6; }
+        80% { opacity: 0.6; }
+        100% { transform: translateY(-120px) scale(0.5); opacity: 0; }
+      }
+      @keyframes waveSlide {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-900px); }
+      }
+      @keyframes orbitGlow {
+        0% { transform: rotate(0deg) translateX(30px) rotate(0deg); }
+        100% { transform: rotate(360deg) translateX(30px) rotate(-360deg); }
+      }
 
-<p align="center">
-<img src="assets/tech-stack.svg" width="100%">
-</p>
+      /* Typography */
+      .font-title {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", sans-serif;
+        font-weight: 800;
+        font-size: 32px;
+        letter-spacing: -0.5px;
+      }
+      .font-card {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", sans-serif;
+        font-weight: 600;
+        font-size: 15px;
+        fill: #F8FAFC;
+        letter-spacing: 0.2px;
+      }
+      .font-emoji {
+        font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+        font-size: 32px;
+      }
+
+      /* Utility Classes */
+      .card-layer { animation: floatCard 6s ease-in-out infinite; }
+      .sweep-layer { animation: lightSweep 8s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+      .wave-fast { animation: waveSlide 12s linear infinite; }
+      .wave-slow { animation: waveSlide 20s linear infinite; }
+      .ambient-pulse { animation: pulseAmbient 5s ease-in-out infinite; transform-origin: center; }
+
+      /* Particle Delays */
+      .pt-1 { animation: floatParticle 6s ease-in-out infinite 0.5s; }
+      .pt-2 { animation: floatParticle 8s ease-in-out infinite 2s; }
+      .pt-3 { animation: floatParticle 5s ease-in-out infinite 3.5s; }
+      .pt-4 { animation: floatParticle 7s ease-in-out infinite 1s; }
+      .pt-5 { animation: floatParticle 9s ease-in-out infinite 4s; }
+    </style>
+
+    <!-- Background Gradients -->
+    <linearGradient id="bg-base" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="60%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+
+    <!-- Card Glassmorphism -->
+    <linearGradient id="card-glass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.08"/>
+      <stop offset="40%" stop-color="#FFFFFF" stop-opacity="0.03"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.01"/>
+    </linearGradient>
+
+    <linearGradient id="card-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.7"/>
+      <stop offset="30%" stop-color="#2563EB" stop-opacity="0.2"/>
+      <stop offset="70%" stop-color="#1E3A8A" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.4"/>
+    </linearGradient>
+
+    <!-- Lighting Gradients -->
+    <radialGradient id="glow-cyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#020617" stop-opacity="0"/>
+    </radialGradient>
+    
+    <radialGradient id="glow-blue" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2563EB" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#020617" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="icon-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.25"/>
+      <stop offset="60%" stop-color="#2563EB" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="title-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="50%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#F8FAFC"/>
+    </linearGradient>
+
+    <linearGradient id="sweep-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="wave-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563EB" stop-opacity="0.1"/>
+      <stop offset="50%" stop-color="#38BDF8" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#2563EB" stop-opacity="0.1"/>
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="shadow-soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#020617" flood-opacity="0.8"/>
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#020617" flood-opacity="0.5"/>
+    </filter>
+
+    <filter id="blur-massive" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="60"/>
+    </filter>
+
+    <filter id="glow-heavy" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- ================= BACKGROUND ================= -->
+  <rect width="900" height="350" fill="url(#bg-base)"/>
+
+  <!-- Ambient Lights -->
+  <g filter="url(#blur-massive)">
+    <circle cx="150" cy="50" r="180" fill="url(#glow-cyan)" class="ambient-pulse" style="animation-delay: 0s;"/>
+    <circle cx="750" cy="200" r="220" fill="url(#glow-blue)" class="ambient-pulse" style="animation-delay: 2s;"/>
+    <circle cx="450" cy="350" r="200" fill="url(#glow-cyan)" class="ambient-pulse" style="animation-delay: 4s;"/>
+  </g>
+
+  <!-- Minimal Dot Grid Overlay -->
+  <g opacity="0.15" fill="#38BDF8">
+    <pattern id="dot-grid" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1"/>
+    </pattern>
+    <rect width="900" height="350" fill="url(#dot-grid)"/>
+  </g>
+
+  <!-- Animated Particles -->
+  <g fill="#38BDF8" filter="url(#glow-heavy)">
+    <circle cx="120" cy="300" r="2" class="pt-1"/>
+    <circle cx="340" cy="280" r="1.5" class="pt-2"/>
+    <circle cx="500" cy="320" r="2.5" class="pt-3"/>
+    <circle cx="720" cy="260" r="1.5" class="pt-4"/>
+    <circle cx="850" cy="310" r="2" class="pt-5"/>
+    <circle cx="220" cy="250" r="1" class="pt-4" style="animation-delay: 1.5s;"/>
+    <circle cx="640" cy="340" r="2.5" class="pt-1" style="animation-delay: 3s;"/>
+  </g>
+
+  <!-- Moving Waves at the bottom -->
+  <g class="wave-slow" opacity="0.3">
+    <path d="M 0 280 Q 225 240 450 280 T 900 280 T 1350 280 T 1800 280 L 1800 350 L 0 350 Z" fill="url(#wave-gradient)"/>
+  </g>
+  <g class="wave-fast" opacity="0.6">
+    <path d="M 0 300 Q 225 270 450 300 T 900 300 T 1350 300 T 1800 300 L 1800 350 L 0 350 Z" fill="url(#wave-gradient)"/>
+  </g>
+
+  <!-- Light Beam Sweep -->
+  <rect x="0" y="0" width="120" height="350" fill="url(#sweep-gradient)" class="sweep-layer" opacity="0.5"/>
+
+  <!-- ================= TITLE ================= -->
+  <g transform="translate(450, 65)">
+    <text x="0" y="0" class="font-title" fill="url(#title-gradient)" text-anchor="middle">
+      <tspan class="font-emoji" dy="4">💻</tspan> Core Skills
+    </text>
+  </g>
+
+  <!-- ================= SKILL CARDS ================= -->
+  
+  <!-- Total width = 900. Cards: 5x140 = 700. Spaces: 6x33.3. X positions: 34, 207, 380, 553, 726 -->
+  <!-- Card 1: Java -->
+  <g transform="translate(34, 120)">
+    <g class="card-layer" style="animation-delay: 0s;">
+      <!-- Shadow and Base Glass -->
+      <rect width="140" height="170" rx="24" fill="url(#card-glass)" stroke="url(#card-border)" stroke-width="1.5" filter="url(#shadow-soft)"/>
+      <!-- Inner Reflection -->
+      <path d="M 24 1 L 116 1" stroke="#FFFFFF" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round"/>
+      
+      <!-- Center Icon Glow & Container -->
+      <circle cx="70" cy="70" r="42" fill="url(#icon-glow)"/>
+      <circle cx="70" cy="70" r="42" fill="none" stroke="#38BDF8" stroke-width="1" stroke-opacity="0.3" stroke-dasharray="4 4"/>
+      
+      <!-- Emoji & Text -->
+      <text x="70" y="81" class="font-emoji" text-anchor="middle">☕</text>
+      <text x="70" y="140" class="font-card" text-anchor="middle">Java</text>
+    </g>
+  </g>
+
+  <!-- Card 2: Manual Testing -->
+  <g transform="translate(207, 120)">
+    <g class="card-layer" style="animation-delay: 0.2s;">
+      <rect width="140" height="170" rx="24" fill="url(#card-glass)" stroke="url(#card-border)" stroke-width="1.5" filter="url(#shadow-soft)"/>
+      <path d="M 24 1 L 116 1" stroke="#FFFFFF" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round"/>
+      
+      <circle cx="70" cy="70" r="42" fill="url(#icon-glow)"/>
+      <circle cx="70" cy="70" r="42" fill="none" stroke="#38BDF8" stroke-width="1" stroke-opacity="0.3" stroke-dasharray="4 4"/>
+      
+      <text x="70" y="81" class="font-emoji" text-anchor="middle">🧪</text>
+      <text x="70" y="140" class="font-card" text-anchor="middle">Manual Testing</text>
+    </g>
+  </g>
+
+  <!-- Card 3: Selenium -->
+  <g transform="translate(380, 120)">
+    <g class="card-layer" style="animation-delay: 0.4s;">
+      <rect width="140" height="170" rx="24" fill="url(#card-glass)" stroke="url(#card-border)" stroke-width="1.5" filter="url(#shadow-soft)"/>
+      <path d="M 24 1 L 116 1" stroke="#FFFFFF" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round"/>
+      
+      <circle cx="70" cy="70" r="42" fill="url(#icon-glow)"/>
+      <!-- Glowing dot orbiting the icon -->
+      <circle cx="70" cy="70" r="42" fill="none" stroke="#38BDF8" stroke-width="1" stroke-opacity="0.3" stroke-dasharray="4 4"/>
+      <g transform="translate(70, 70)">
+        <circle cx="0" cy="0" r="3" fill="#38BDF8" filter="url(#glow-heavy)" style="animation: orbitGlow 6s linear infinite;"/>
+      </g>
+      
+      <text x="70" y="81" class="font-emoji" text-anchor="middle">🤖</text>
+      <text x="70" y="140" class="font-card" text-anchor="middle">Selenium</text>
+    </g>
+  </g>
+
+  <!-- Card 4: TestNG -->
+  <g transform="translate(553, 120)">
+    <g class="card-layer" style="animation-delay: 0.6s;">
+      <rect width="140" height="170" rx="24" fill="url(#card-glass)" stroke="url(#card-border)" stroke-width="1.5" filter="url(#shadow-soft)"/>
+      <path d="M 24 1 L 116 1" stroke="#FFFFFF" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round"/>
+      
+      <circle cx="70" cy="70" r="42" fill="url(#icon-glow)"/>
+      <circle cx="70" cy="70" r="42" fill="none" stroke="#38BDF8" stroke-width="1" stroke-opacity="0.3" stroke-dasharray="4 4"/>
+      
+      <text x="70" y="81" class="font-emoji" text-anchor="middle">⚙</text>
+      <text x="70" y="140" class="font-card" text-anchor="middle">TestNG</text>
+    </g>
+  </g>
+
+  <!-- Card 5: SQL -->
+  <g transform="translate(726, 120)">
+    <g class="card-layer" style="animation-delay: 0.8s;">
+      <rect width="140" height="170" rx="24" fill="url(#card-glass)" stroke="url(#card-border)" stroke-width="1.5" filter="url(#shadow-soft)"/>
+      <path d="M 24 1 L 116 1" stroke="#FFFFFF" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round"/>
+      
+      <circle cx="70" cy="70" r="42" fill="url(#icon-glow)"/>
+      <circle cx="70" cy="70" r="42" fill="none" stroke="#38BDF8" stroke-width="1" stroke-opacity="0.3" stroke-dasharray="4 4"/>
+      
+      <text x="70" y="81" class="font-emoji" text-anchor="middle">🗄</text>
+      <text x="70" y="140" class="font-card" text-anchor="middle">SQL</text>
+    </g>
+  </g>
+
+</svg>
