@@ -97,7 +97,7 @@ https://github.com/Raghul-sdet/AI-Test-Engineering-Platform
 # 📫 Connect
 
 <p align="center">
-<a href="https://www.linkedin.com/in/your-linkedin-id">
+<a href="[https://www.linkedin.com/in/your-linkedin-id](https://www.linkedin.com/in/raghul-l-b46627315/)">
 <img src="https://cdn.simpleicons.org/linkedin/0A66C2" height="40"/>
 </a>
 
