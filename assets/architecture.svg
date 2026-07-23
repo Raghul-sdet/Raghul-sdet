@@ -27,10 +27,8 @@
       .card-base { fill: url(#glass-fill); stroke: url(#glass-border); stroke-width: 1.5; }
       .card-ai { fill: url(#glass-fill-ai); stroke: #38BDF8; stroke-width: 2; }
       
-      .line-track { fill: none; stroke: #1E293B; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
-      .line-anim { fill: none; stroke: #2563EB; stroke-width: 2.5; stroke-dasharray: 6 6; stroke-linecap: round; stroke-linejoin: round; animation: dashFlow 1s linear infinite; }
-
-      .pulse { animation: pulseNode 4s ease-in-out infinite; transform-origin: center; }
+      .line-track { fill: none; stroke: #1E293B; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+      .line-anim { fill: none; stroke: #38BDF8; stroke-width: 2.5; stroke-dasharray: 6 6; stroke-linecap: round; stroke-linejoin: round; animation: dashFlow 1s linear infinite; }
     </style>
 
     <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -41,12 +39,12 @@
     </linearGradient>
 
     <linearGradient id="glass-fill" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#F8FAFC" stop-opacity="0.06" />
+      <stop offset="0%" stop-color="#F8FAFC" stop-opacity="0.05" />
       <stop offset="100%" stop-color="#F8FAFC" stop-opacity="0.01" />
     </linearGradient>
     
     <linearGradient id="glass-fill-ai" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.1" />
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.12" />
       <stop offset="100%" stop-color="#2563EB" stop-opacity="0.02" />
     </linearGradient>
 
@@ -58,7 +56,7 @@
 
     <linearGradient id="beam" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#38BDF8" stop-opacity="0" />
-      <stop offset="50%" stop-color="#38BDF8" stop-opacity="0.12" />
+      <stop offset="50%" stop-color="#38BDF8" stop-opacity="0.1" />
       <stop offset="100%" stop-color="#38BDF8" stop-opacity="0" />
     </linearGradient>
 
@@ -73,27 +71,30 @@
     </radialGradient>
 
     <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.6" />
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.5" />
     </filter>
 
-    <filter id="heavy-glow" x="-50%" y="-50%" width="200%" height="200%">
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
       <feGaussianBlur stdDeviation="8" result="blur" />
       <feComposite in="SourceGraphic" in2="blur" operator="over" />
     </filter>
 
-    <marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
       <path d="M 0 1.5 L 9 5 L 0 8.5 Z" fill="#38BDF8" />
     </marker>
   </defs>
 
+  <!-- Background -->
   <rect width="1400" height="650" fill="url(#bg-grad)" />
 
+  <!-- Ambient Glows -->
   <g opacity="0.8">
     <circle cx="350" cy="200" r="450" fill="url(#ambient-orb-1)" />
     <circle cx="1050" cy="450" r="400" fill="url(#ambient-orb-2)" />
     <circle cx="700" cy="350" r="350" fill="url(#ambient-orb-1)" opacity="0.6" />
   </g>
 
+  <!-- Grid Overlay -->
   <g opacity="0.04" stroke="#F8FAFC" stroke-width="1.5">
     <pattern id="grid-pattern" width="48" height="48" patternUnits="userSpaceOnUse">
       <path d="M 48 0 L 0 0 0 48" fill="none" />
@@ -101,135 +102,166 @@
     <rect width="1400" height="650" fill="url(#grid-pattern)" />
   </g>
 
+  <!-- Light Beam Sweep -->
   <rect x="0" y="0" width="200" height="650" fill="url(#beam)" style="animation: sweepBeam 9s cubic-bezier(0.4, 0, 0.2, 1) infinite;" />
 
-  <g transform="translate(700, 45)" text-anchor="middle">
+  <!-- Header -->
+  <g transform="translate(700, 30)" text-anchor="middle">
     <text y="0" class="title">AI Test Engineering Platform</text>
-    <text y="28" class="subtitle">Enterprise QA Automation Framework</text>
+    <text y="24" class="subtitle">Enterprise QA Automation Framework</text>
   </g>
 
+  <!-- ==================== LINES & CONNECTORS ==================== -->
   <g>
-    <!-- Background Tracks -->
-    <path class="line-track" d="M 700 140 L 700 160" />
-    <path class="line-track" d="M 700 200 L 700 220" />
-    <path class="line-track" d="M 700 260 L 700 280" />
-    <path class="line-track" d="M 700 320 L 700 340" />
+    <!-- Background Tracks (Solid dark blue) -->
+    <path class="line-track" d="M 700 92 L 700 122" />
+    <path class="line-track" d="M 700 164 L 700 194" />
+    <path class="line-track" d="M 700 236 L 700 266" />
+    <path class="line-track" d="M 700 308 L 700 338" />
     
-    <path class="line-track" d="M 700 380 L 700 395 Q 700 405 690 405 L 260 405 Q 250 405 250 415 L 250 420" />
-    <path class="line-track" d="M 700 380 L 700 420" />
-    <path class="line-track" d="M 700 380 L 700 395 Q 700 405 710 405 L 1140 405 Q 1150 405 1150 415 L 1150 420" />
+    <path class="line-track" d="M 700 380 L 700 410" />
+    <path class="line-track" d="M 700 380 L 700 385 Q 700 395 690 395 L 310 395 Q 300 395 300 405 L 300 410" />
+    <path class="line-track" d="M 700 380 L 700 385 Q 700 395 710 395 L 1090 395 Q 1100 395 1100 405 L 1100 410" />
     
-    <path class="line-track" d="M 250 470 L 250 480 Q 250 490 260 490 L 690 490 Q 700 490 700 500" />
-    <path class="line-track" d="M 700 470 L 700 500" />
-    <path class="line-track" d="M 1150 470 L 1150 480 Q 1150 490 1140 490 L 710 490 Q 700 490 700 500" />
+    <path class="line-track" d="M 700 464 L 700 494" />
+    <path class="line-track" d="M 300 464 L 300 469 Q 300 479 310 479 L 690 479 Q 700 479 700 489 L 700 494" />
+    <path class="line-track" d="M 1100 464 L 1100 469 Q 1100 479 1090 479 L 710 479 Q 700 479 700 489 L 700 494" />
     
-    <path class="line-track" d="M 700 540 L 700 560" />
+    <path class="line-track" d="M 700 536 L 700 566" />
 
-    <!-- Animated Foreground Flows -->
-    <path class="line-anim" marker-end="url(#arrowhead)" d="M 700 140 L 700 160" />
-    <path class="line-anim" marker-end="url(#arrowhead)" d="M 700 200 L 700 220" />
-    <path class="line-anim" marker-end="url(#arrowhead)" d="M 700 260 L 700 280" />
-    <path class="line-anim" marker-end="url(#arrowhead)" d="M 700 320 L 700 340" />
+    <!-- Animated Dashed Lines (Cyan) -->
+    <path class="line-anim" marker-end="url(#arrowhead)" d="M 700 92 L 700 122" />
+    <path class="line-anim" marker-end="url(#arrowhead)" d="M 700 164 L 700 194" />
+    <path class="line-anim" marker-end="url(#arrowhead)" d="M 700 236 L 700 266" />
+    <path class="line-anim" marker-end="url(#arrowhead)" d="M 700 308 L 700 338" />
     
-    <path class="line-anim" marker-end="url(#arrowhead)" d="M 700 380 L 700 395 Q 700 405 690 405 L 260 405 Q 250 405 250 415 L 250 420" />
-    <path class="line-anim" marker-end="url(#arrowhead)" d="M 700 380 L 700 420" />
-    <path class="line-anim" marker-end="url(#arrowhead)" d="M 700 380 L 700 395 Q 700 405 710 405 L 1140 405 Q 1150 405 1150 415 L 1150 420" />
+    <path class="line-anim" marker-end="url(#arrowhead)" d="M 700 380 L 700 410" />
+    <path class="line-anim" marker-end="url(#arrowhead)" d="M 700 380 L 700 385 Q 700 395 690 395 L 310 395 Q 300 395 300 405 L 300 410" />
+    <path class="line-anim" marker-end="url(#arrowhead)" d="M 700 380 L 700 385 Q 700 395 710 395 L 1090 395 Q 1100 395 1100 405 L 1100 410" />
     
-    <path class="line-anim" marker-end="url(#arrowhead)" d="M 250 470 L 250 480 Q 250 490 260 490 L 690 490 Q 700 490 700 500" />
-    <path class="line-anim" marker-end="url(#arrowhead)" d="M 700 470 L 700 500" />
-    <path class="line-anim" marker-end="url(#arrowhead)" d="M 1150 470 L 1150 480 Q 1150 490 1140 490 L 710 490 Q 700 490 700 500" />
+    <path class="line-anim" marker-end="url(#arrowhead)" d="M 700 464 L 700 494" />
+    <path class="line-anim" marker-end="url(#arrowhead)" d="M 300 464 L 300 469 Q 300 479 310 479 L 690 479 Q 700 479 700 489 L 700 494" />
+    <path class="line-anim" marker-end="url(#arrowhead)" d="M 1100 464 L 1100 469 Q 1100 479 1090 479 L 710 479 Q 700 479 700 489 L 700 494" />
     
-    <path class="line-anim" marker-end="url(#arrowhead)" d="M 700 540 L 700 560" />
+    <path class="line-anim" marker-end="url(#arrowhead)" d="M 700 536 L 700 566" />
   </g>
 
-  <g filter="url(#heavy-glow)">
+  <!-- ==================== PARTICLES ==================== -->
+  <g filter="url(#glow)">
+    <!-- Branching Particles -->
     <circle r="4" fill="#F8FAFC" style="animation: particleGlow 3s infinite;">
-      <animateMotion dur="3s" repeatCount="indefinite" path="M 700 380 L 700 395 Q 700 405 690 405 L 260 405 Q 250 405 250 415 L 250 420" />
+      <animateMotion dur="3s" repeatCount="indefinite" path="M 700 380 L 700 385 Q 700 395 690 395 L 310 395 Q 300 395 300 405 L 300 410" />
     </circle>
-    <circle r="4" fill="#F8FAFC" style="animation: particleGlow 2.5s infinite;">
-      <animateMotion dur="2.5s" repeatCount="indefinite" path="M 700 380 L 700 420" />
+    <circle r="4" fill="#F8FAFC" style="animation: particleGlow 1.5s infinite;">
+      <animateMotion dur="1.5s" repeatCount="indefinite" path="M 700 380 L 700 410" />
     </circle>
-    <circle r="4" fill="#F8FAFC" style="animation: particleGlow 3.5s infinite;">
-      <animateMotion dur="3.5s" repeatCount="indefinite" path="M 700 380 L 700 395 Q 700 405 710 405 L 1140 405 Q 1150 405 1150 415 L 1150 420" />
+    <circle r="4" fill="#F8FAFC" style="animation: particleGlow 3s infinite;">
+      <animateMotion dur="3s" repeatCount="indefinite" path="M 700 380 L 700 385 Q 700 395 710 395 L 1090 395 Q 1100 395 1100 405 L 1100 410" />
     </circle>
     
+    <!-- Merging Particles -->
     <circle r="4" fill="#38BDF8" style="animation: particleGlow 3s infinite;">
-      <animateMotion dur="3s" repeatCount="indefinite" path="M 250 470 L 250 480 Q 250 490 260 490 L 690 490 Q 700 490 700 500" />
+      <animateMotion dur="3s" repeatCount="indefinite" path="M 300 464 L 300 469 Q 300 479 310 479 L 690 479 Q 700 479 700 489 L 700 494" />
     </circle>
-    <circle r="4" fill="#38BDF8" style="animation: particleGlow 2.5s infinite;">
-      <animateMotion dur="2.5s" repeatCount="indefinite" path="M 700 470 L 700 500" />
+    <circle r="4" fill="#38BDF8" style="animation: particleGlow 1.5s infinite;">
+      <animateMotion dur="1.5s" repeatCount="indefinite" path="M 700 464 L 700 494" />
     </circle>
-    <circle r="4" fill="#38BDF8" style="animation: particleGlow 3.5s infinite;">
-      <animateMotion dur="3.5s" repeatCount="indefinite" path="M 1150 470 L 1150 480 Q 1150 490 1140 490 L 710 490 Q 700 490 700 500" />
+    <circle r="4" fill="#38BDF8" style="animation: particleGlow 3s infinite;">
+      <animateMotion dur="3s" repeatCount="indefinite" path="M 1100 464 L 1100 469 Q 1100 479 1090 479 L 710 479 Q 700 479 700 489 L 700 494" />
     </circle>
   </g>
 
+  <!-- ==================== ARCHITECTURE NODES ==================== -->
   <g filter="url(#shadow)">
     
-    <g transform="translate(560, 100)">
-      <rect width="280" height="40" rx="10" class="card-base" />
+    <!-- 1. Business Requirements -->
+    <g transform="translate(560, 50)">
+      <rect width="280" height="42" rx="10" class="card-base" />
       <path d="M 12 1 L 268 1" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="1.5" stroke-linecap="round" />
-      <text x="140" y="25" text-anchor="middle" dominant-baseline="middle" class="node-text">Business Requirements</text>
+      <text x="140" y="22" text-anchor="middle" dominant-baseline="middle" class="node-text">Business Requirements</text>
     </g>
 
-    <g transform="translate(560, 160)">
-      <rect width="280" height="40" rx="10" class="card-base" />
+    <!-- 2. Requirement Analysis -->
+    <g transform="translate(560, 122)">
+      <rect width="280" height="42" rx="10" class="card-base" />
       <path d="M 12 1 L 268 1" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="1.5" stroke-linecap="round" />
-      <text x="140" y="25" text-anchor="middle" dominant-baseline="middle" class="node-text">Requirement Analysis</text>
+      <text x="140" y="22" text-anchor="middle" dominant-baseline="middle" class="node-text">Requirement Analysis</text>
     </g>
 
-    <g transform="translate(560, 220)" class="pulse" style="animation-delay: 0s;">
-      <rect width="280" height="40" rx="10" class="card-ai" />
+    <!-- 3. AI Scenario Generation -->
+    <g transform="translate(560, 194)">
+      <!-- Outer pulsing glow box -->
+      <rect width="280" height="42" rx="10" fill="none" stroke="#38BDF8" stroke-width="6" filter="url(#glow)">
+        <animate attributeName="opacity" values="0.1; 0.6; 0.1" dur="3s" repeatCount="indefinite" />
+      </rect>
+      <!-- Main box -->
+      <rect width="280" height="42" rx="10" class="card-ai">
+        <animate attributeName="stroke-opacity" values="0.4; 1; 0.4" dur="3s" repeatCount="indefinite" />
+      </rect>
       <path d="M 12 1 L 268 1" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="1.5" stroke-linecap="round" />
-      <text x="140" y="25" text-anchor="middle" dominant-baseline="middle" class="node-text">AI Scenario Generation</text>
+      <text x="140" y="22" text-anchor="middle" dominant-baseline="middle" class="node-text">AI Scenario Generation</text>
     </g>
 
-    <g transform="translate(560, 280)" class="pulse" style="animation-delay: -2s;">
-      <rect width="280" height="40" rx="10" class="card-ai" />
+    <!-- 4. AI Test Case Generation -->
+    <g transform="translate(560, 266)">
+      <rect width="280" height="42" rx="10" fill="none" stroke="#38BDF8" stroke-width="6" filter="url(#glow)">
+        <animate attributeName="opacity" values="0.1; 0.6; 0.1" dur="3s" repeatCount="indefinite" begin="1.5s" />
+      </rect>
+      <rect width="280" height="42" rx="10" class="card-ai">
+        <animate attributeName="stroke-opacity" values="0.4; 1; 0.4" dur="3s" repeatCount="indefinite" begin="1.5s" />
+      </rect>
       <path d="M 12 1 L 268 1" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="1.5" stroke-linecap="round" />
-      <text x="140" y="25" text-anchor="middle" dominant-baseline="middle" class="node-text">AI Test Case Generation</text>
+      <text x="140" y="22" text-anchor="middle" dominant-baseline="middle" class="node-text">AI Test Case Generation</text>
     </g>
 
-    <g transform="translate(560, 340)">
-      <rect width="280" height="40" rx="10" class="card-base" />
+    <!-- 5. Enterprise Test Plan -->
+    <g transform="translate(560, 338)">
+      <rect width="280" height="42" rx="10" class="card-base" />
       <path d="M 12 1 L 268 1" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="1.5" stroke-linecap="round" />
-      <text x="140" y="25" text-anchor="middle" dominant-baseline="middle" class="node-text">Enterprise Test Plan</text>
+      <text x="140" y="22" text-anchor="middle" dominant-baseline="middle" class="node-text">Enterprise Test Plan</text>
     </g>
 
-    <!-- Branch 1: UI -->
-    <g transform="translate(110, 420)">
-      <rect width="280" height="50" rx="12" class="card-base" />
+    <!-- 6a. UI Automation -->
+    <g transform="translate(160, 410)">
+      <rect width="280" height="54" rx="12" class="card-base" />
       <path d="M 14 1 L 266 1" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="1.5" stroke-linecap="round" />
       <text x="140" y="22" text-anchor="middle" dominant-baseline="middle" class="node-text">UI Automation</text>
-      <text x="140" y="40" text-anchor="middle" dominant-baseline="middle" class="node-subtext">Selenium</text>
+      <text x="140" y="42" text-anchor="middle" dominant-baseline="middle" class="node-subtext">Selenium 4</text>
     </g>
 
-    <!-- Branch 2: API -->
-    <g transform="translate(560, 420)">
-      <rect width="280" height="50" rx="12" class="card-base" />
+    <!-- 6b. API Automation -->
+    <g transform="translate(560, 410)">
+      <rect width="280" height="54" rx="12" class="card-base" />
       <path d="M 14 1 L 266 1" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="1.5" stroke-linecap="round" />
       <text x="140" y="22" text-anchor="middle" dominant-baseline="middle" class="node-text">API Automation</text>
-      <text x="140" y="40" text-anchor="middle" dominant-baseline="middle" class="node-subtext">REST Assured</text>
+      <text x="140" y="42" text-anchor="middle" dominant-baseline="middle" class="node-subtext">REST Assured</text>
     </g>
 
-    <!-- Branch 3: DB -->
-    <g transform="translate(1010, 420)">
-      <rect width="280" height="50" rx="12" class="card-base" />
+    <!-- 6c. Database Testing -->
+    <g transform="translate(960, 410)">
+      <rect width="280" height="54" rx="12" class="card-base" />
       <path d="M 14 1 L 266 1" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="1.5" stroke-linecap="round" />
       <text x="140" y="22" text-anchor="middle" dominant-baseline="middle" class="node-text">Database Testing</text>
-      <text x="140" y="40" text-anchor="middle" dominant-baseline="middle" class="node-subtext">JDBC</text>
+      <text x="140" y="42" text-anchor="middle" dominant-baseline="middle" class="node-subtext">JDBC + SQL</text>
     </g>
 
-    <g transform="translate(560, 500)" class="pulse" style="animation-delay: -1s;">
-      <rect width="280" height="40" rx="10" class="card-ai" />
+    <!-- 7. Execution Engine -->
+    <g transform="translate(560, 494)">
+      <rect width="280" height="42" rx="10" fill="none" stroke="#38BDF8" stroke-width="6" filter="url(#glow)">
+        <animate attributeName="opacity" values="0.1; 0.6; 0.1" dur="3s" repeatCount="indefinite" begin="0.75s" />
+      </rect>
+      <rect width="280" height="42" rx="10" class="card-ai">
+        <animate attributeName="stroke-opacity" values="0.4; 1; 0.4" dur="3s" repeatCount="indefinite" begin="0.75s" />
+      </rect>
       <path d="M 12 1 L 268 1" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="1.5" stroke-linecap="round" />
-      <text x="140" y="25" text-anchor="middle" dominant-baseline="middle" class="node-text">Execution Engine</text>
+      <text x="140" y="22" text-anchor="middle" dominant-baseline="middle" class="node-text">Execution Engine</text>
     </g>
 
-    <g transform="translate(560, 560)">
-      <rect width="280" height="40" rx="10" class="card-base" />
+    <!-- 8. Reports & Analytics -->
+    <g transform="translate(560, 566)">
+      <rect width="280" height="42" rx="10" class="card-base" />
       <path d="M 12 1 L 268 1" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="1.5" stroke-linecap="round" />
-      <text x="140" y="25" text-anchor="middle" dominant-baseline="middle" class="node-text">Reports &amp; Analytics</text>
+      <text x="140" y="22" text-anchor="middle" dominant-baseline="middle" class="node-text">Reports &amp; Analytics</text>
     </g>
   </g>
 </svg>
