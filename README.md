@@ -1,22 +1,24 @@
 <h1 align="center">Hi 👋, I'm Raghul L</h1>
 
-<h3 align="center">BCA Graduate | QA Automation | Java | Software Testing</h3>
-
 <p align="center">
-Passionate about building scalable test automation frameworks and exploring AI-powered software testing solutions.
+BCA Graduate • QA Automation • Java • Software Testing
 </p>
 
 <p align="center">
-<a href="https://www.linkedin.com/in/your-linkedin-profile">
-<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
+Passionate about building reliable software through quality assurance, automation testing, and modern engineering practices.
+</p>
+
+<p align="center">
+<a href="https://www.linkedin.com/in/your-linkedin-id">
+<img src="https://skillicons.dev/icons?i=linkedin" height="40"/>
 </a>
 
 <a href="https://github.com/Raghul-sdet">
-<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
+<img src="https://skillicons.dev/icons?i=github" height="40"/>
 </a>
 
 <a href="mailto:raghul.sdet@gmail.com">
-<img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/>
+<img src="https://img.icons8.com/color/48/gmail-new.png" height="40"/>
 </a>
 </p>
 
@@ -24,15 +26,11 @@ Passionate about building scalable test automation frameworks and exploring AI-p
 
 # 👨‍💻 About Me
 
-🎓 BCA Graduate
-
-💼 Former Alarm FMC Executive with experience in a 24×7 operations environment
-
-💻 Interested in QA Automation, Software Testing, and Java Development
-
-🌱 Currently learning modern automation frameworks and CI/CD practices
-
-📍 Chennai, Tamil Nadu, India
+- 🎓 Bachelor of Computer Applications (BCA)
+- 💼 Former Alarm FMC Executive (24×7 Operations)
+- 💻 Interested in QA Automation, Software Testing & Java
+- 🚀 Building modern automation frameworks using Java and Selenium
+- 📍 Chennai, Tamil Nadu, India
 
 ---
 
@@ -40,92 +38,92 @@ Passionate about building scalable test automation frameworks and exploring AI-p
 
 ## AI Test Engineering Platform
 
-Enterprise AI-powered Test Engineering Platform built using Java 17.
+Enterprise AI-powered Test Engineering Platform developed using Java 17.
 
-### Key Features
+### Highlights
 
 - 🤖 AI Requirement Analysis
 - 📝 AI Test Scenario Generation
 - ✅ AI Test Case Generation
 - 🌐 Selenium WebDriver Automation
-- 🔗 REST Assured API Automation
-- 🗄 JDBC Database Validation
+- 🔗 REST API Automation
+- 🗄 Database Validation (JDBC)
 - 📊 Enterprise Excel Report Generation
 - 📈 Allure Reporting
 - ⚙ GitHub Actions CI/CD
-- 🚀 Jenkins Integration
-- 🐳 Docker Support
+- 🐳 Docker
+- 🚀 Jenkins
 
-### Repository
+🔗 **Repository**
 
-🔗 https://github.com/Raghul-sdet/AI-Test-Engineering-Platform
+https://github.com/Raghul-sdet/AI-Test-Engineering-Platform
 
 ---
 
-# 💻 Technical Skills
+# 💻 Tech Stack
 
-## Programming
+### ☕ Programming
 
 <p>
 <img src="https://skillicons.dev/icons?i=java"/>
 </p>
 
-## 🧪 Testing
+---
+
+### 🧪 Testing
 
 <p>
-  <img src="https://img.shields.io/badge/Manual_Testing-007ACC?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white"/>
-  <img src="https://img.shields.io/badge/TestNG-FF6C37?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/REST_Assured-009688?style=for-the-badge"/>
+<img src="https://skillicons.dev/icons?i=selenium"/>
+<img src="https://cdn.simpleicons.org/testng/FF6C37" height="48"/>
+<img src="https://cdn.simpleicons.org/postman/FF6C37" height="48"/>
 </p>
 
 ---
 
-## Database
-
-## 🗄️ Database
+### 🗄 Database
 
 <p>
-  <img src="https://img.shields.io/badge/SQL-336791?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/JDBC-007396?style=for-the-badge"/>
+<img src="https://skillicons.dev/icons?i=mysql"/>
 </p>
 
 ---
 
-## Tools & DevOps
+### ⚙ Tools
 
 <p>
-
-<img src="https://skillicons.dev/icons?i=git,github,docker,jenkins,vscode,idea"/>
-
+<img src="https://skillicons.dev/icons?i=git,github,maven,docker,jenkins,vscode,idea"/>
 </p>
 
 ---
 
-# 📊 Technology Stack
+# 📌 Core Skills
 
-| Category | Technologies |
-|-----------|--------------|
-| Programming | Java |
-| Manual Testing | SDLC, STLC, Functional Testing, Smoke Testing, Regression Testing |
-| Automation | Selenium WebDriver, TestNG, REST Assured, Maven |
-| Database | SQL, JDBC |
-| Tools | Git, GitHub, Docker, Jenkins, Apache POI, Allure, MS Excel |
+- Manual Testing
+- Automation Testing
+- Selenium WebDriver
+- TestNG
+- REST API Testing
+- SQL
+- JDBC
+- Maven
+- Git
+- GitHub
+- CI/CD
 
 ---
 
-# 📫 Connect With Me
+# 📫 Connect
 
-📧 Email: **raghul.sdet@gmail.com**
+📧 **raghul.sdet@gmail.com**
 
-💼 LinkedIn: **https://www.linkedin.com/in/your-linkedin-profile**
+💼 **LinkedIn**
+https://www.linkedin.com/in/your-linkedin-id
 
-💻 GitHub: **https://github.com/Raghul-sdet**
+💻 **GitHub**
+https://github.com/Raghul-sdet
 
 ---
 
 <p align="center">
-
-⭐ If you like my work, feel free to explore my repositories and connect with me!
-
+⭐ Thanks for visiting my profile!
 </p>
