@@ -70,15 +70,14 @@ Enterprise AI-powered Test Engineering Platform built using Java 17.
 <img src="https://skillicons.dev/icons?i=java"/>
 </p>
 
-## Manual Testing
+## 🧪 Testing Skills
 
-- SDLC
-- STLC
-- Test Case Design
-- Functional Testing
-- Smoke Testing
-- Regression Testing
-- Defect Life Cycle
+<p>
+  <img src="https://img.shields.io/badge/Manual%20Testing-0A66C2?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white"/>
+  <img src="https://img.shields.io/badge/TestNG-FF6C37?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/REST%20Assured-009688?style=for-the-badge"/>
+</p>
 
 ---
 
