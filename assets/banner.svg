@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 320" width="1280" height="320">
   <defs>
+    <!-- Fonts & Keyframe Animations -->
     <style>
       @keyframes spinCW {
         0% { transform: rotate(0deg); }
@@ -9,106 +10,101 @@
         0% { transform: rotate(360deg); }
         100% { transform: rotate(0deg); }
       }
-      @keyframes spinFast {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
       @keyframes pulseGlow {
-        0%, 100% { opacity: 0.5; transform: scale(1); }
-        50% { opacity: 0.9; transform: scale(1.05); }
+        0%, 100% { opacity: 0.4; transform: scale(1); }
+        50% { opacity: 0.85; transform: scale(1.08); }
       }
       @keyframes pulseDot {
         0%, 100% { opacity: 1; transform: scale(1); filter: drop-shadow(0 0 4px #38BDF8); }
-        50% { opacity: 0.5; transform: scale(0.85); filter: drop-shadow(0 0 2px #38BDF8); }
+        50% { opacity: 0.4; transform: scale(0.85); filter: drop-shadow(0 0 1px #38BDF8); }
       }
       @keyframes floatUp {
-        0% { transform: translateY(10px) translateX(0px); opacity: 0; }
-        25% { opacity: 0.8; }
-        75% { opacity: 0.8; }
-        100% { transform: translateY(-60px) translateX(20px); opacity: 0; }
-      }
-      @keyframes floatSlow {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
+        0% { transform: translateY(0px) translateX(0px); opacity: 0; }
+        25% { opacity: 0.7; }
+        75% { opacity: 0.7; }
+        100% { transform: translateY(-50px) translateX(15px); opacity: 0; }
       }
       @keyframes lightBeam {
         0% { transform: translateX(-400px) skewX(-25deg); }
-        30%, 100% { transform: translateX(1600px) skewX(-25deg); }
+        35%, 100% { transform: translateX(1600px) skewX(-25deg); }
       }
       @keyframes waveMotion {
         0% { transform: translateX(0); }
         100% { transform: translateX(-640px); }
       }
-      @keyframes waveMotionSlow {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-640px); }
+      @keyframes orbShift {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        50% { transform: translate(-30px, 20px) scale(1.15); }
       }
-      @keyframes orbitParticle {
-        0% { transform: rotate(0deg) translateX(105px) rotate(0deg); }
-        100% { transform: rotate(360deg) translateX(105px) rotate(-360deg); }
+      @keyframes borderDash {
+        0% { stroke-dashoffset: 0; }
+        100% { stroke-dashoffset: 1000; }
       }
-      @keyframes orbitParticleInner {
-        0% { transform: rotate(360deg) translateX(58px) rotate(-360deg); }
-        100% { transform: rotate(0deg) translateX(58px) rotate(0deg); }
+      @keyframes shimmerText {
+        0% { stop-color: #F8FAFC; }
+        50% { stop-color: #38BDF8; }
+        100% { stop-color: #F8FAFC; }
       }
 
-      /* Typography */
       .text-title {
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Inter, sans-serif;
         font-weight: 800;
-        font-size: 56px;
-        letter-spacing: -1.5px;
+        font-size: 46px;
+        letter-spacing: -0.5px;
       }
       .text-subtitle {
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Segoe UI", sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Inter, sans-serif;
         font-weight: 700;
         font-size: 11px;
-        letter-spacing: 3px;
+        letter-spacing: 1.2px;
         text-transform: uppercase;
       }
       .text-tagline {
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Segoe UI", sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Inter, sans-serif;
         font-weight: 400;
-        font-size: 18px;
-        fill: #CBD5E1;
+        font-size: 16px;
+        fill: #94A3B8;
         letter-spacing: -0.2px;
       }
       .text-chip {
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Segoe UI", sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Inter, sans-serif;
         font-weight: 600;
-        font-size: 13px;
+        font-size: 12px;
         fill: #F8FAFC;
-        letter-spacing: 0.3px;
-      }
-      .text-metric {
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", sans-serif;
-        font-size: 9px;
-        font-weight: 700;
-        letter-spacing: 0.8px;
+        letter-spacing: 0.2px;
       }
 
-      /* Utility Classes */
-      .spin-cw { animation: spinCW 14s linear infinite; transform-origin: 0px 0px; }
-      .spin-ccw { animation: spinCCW 10s linear infinite; transform-origin: 0px 0px; }
-      .spin-fast { animation: spinFast 4s linear infinite; transform-origin: 0px 0px; }
-      .pulse-core { animation: pulseGlow 4s ease-in-out infinite; transform-origin: 0px 0px; }
-      .pulse-indicator { animation: pulseDot 2s ease-in-out infinite; transform-origin: center; }
-      .beam-animated { animation: lightBeam 8s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
-      .wave-front { animation: waveMotion 12s linear infinite; }
-      .wave-back { animation: waveMotionSlow 18s linear infinite; }
-      .float-ui { animation: floatSlow 6s ease-in-out infinite; }
-      .orbit-dot-1 { animation: orbitParticle 8s linear infinite; transform-origin: 0px 0px; }
-      .orbit-dot-2 { animation: orbitParticleInner 6s linear infinite; transform-origin: 0px 0px; }
+      .spin-cw {
+        transform-origin: 0px 0px;
+        animation: spinCW 12s linear infinite;
+      }
+      .spin-ccw {
+        transform-origin: 0px 0px;
+        animation: spinCCW 8s linear infinite;
+      }
+      .pulse-core {
+        animation: pulseGlow 4s ease-in-out infinite;
+      }
+      .pulse-indicator {
+        animation: pulseDot 2s ease-in-out infinite;
+        transform-origin: center;
+      }
+      .beam-animated {
+        animation: lightBeam 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      }
+      .wave-animated {
+        animation: waveMotion 10s linear infinite;
+      }
+      .orb-animated {
+        animation: orbShift 8s ease-in-out infinite;
+      }
 
-      /* Particle Delays */
       .p1 { animation: floatUp 5s ease-in-out infinite 0s; }
       .p2 { animation: floatUp 7s ease-in-out infinite 1.2s; }
       .p3 { animation: floatUp 6s ease-in-out infinite 2.5s; }
       .p4 { animation: floatUp 8s ease-in-out infinite 0.8s; }
       .p5 { animation: floatUp 5.5s ease-in-out infinite 3.1s; }
       .p6 { animation: floatUp 6.5s ease-in-out infinite 1.8s; }
-      .p7 { animation: floatUp 7.5s ease-in-out infinite 4.2s; }
-      .p8 { animation: floatUp 6s ease-in-out infinite 0.5s; }
     </style>
 
     <!-- Gradients -->
@@ -118,82 +114,72 @@
       <stop offset="100%" stop-color="#020617"/>
     </linearGradient>
 
-    <radialGradient id="glow-blue" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#1E3A8A" stop-opacity="0.6"/>
+    <radialGradient id="orb-blue" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1E3A8A" stop-opacity="0.8"/>
+      <stop offset="60%" stop-color="#2563EB" stop-opacity="0.3"/>
       <stop offset="100%" stop-color="#020617" stop-opacity="0"/>
     </radialGradient>
 
-    <radialGradient id="glow-cyan" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.4"/>
+    <radialGradient id="orb-cyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.5"/>
+      <stop offset="70%" stop-color="#1E3A8A" stop-opacity="0.1"/>
       <stop offset="100%" stop-color="#020617" stop-opacity="0"/>
     </radialGradient>
 
     <linearGradient id="glass-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.06"/>
-      <stop offset="40%" stop-color="#FFFFFF" stop-opacity="0.02"/>
-      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.005"/>
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.02"/>
     </linearGradient>
 
     <linearGradient id="glass-border" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.5"/>
-      <stop offset="25%" stop-color="#2563EB" stop-opacity="0.2"/>
-      <stop offset="75%" stop-color="#1E3A8A" stop-opacity="0.1"/>
-      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.4"/>
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.6"/>
+      <stop offset="25%" stop-color="#2563EB" stop-opacity="0.3"/>
+      <stop offset="75%" stop-color="#1E3A8A" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.5"/>
     </linearGradient>
 
     <linearGradient id="title-grad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#F8FAFC">
-        <animate attributeName="stop-color" values="#F8FAFC; #7DD3FC; #F8FAFC" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="stop-color" values="#F8FAFC; #38BDF8; #F8FAFC" dur="6s" repeatCount="indefinite"/>
       </stop>
-      <stop offset="40%" stop-color="#F1F5F9"/>
-      <stop offset="100%" stop-color="#94A3B8"/>
+      <stop offset="100%" stop-color="#CBD5E1"/>
     </linearGradient>
 
-    <linearGradient id="wave-grad-front" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.3"/>
-      <stop offset="50%" stop-color="#2563EB" stop-opacity="0.1"/>
-      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.3"/>
-    </linearGradient>
-    
-    <linearGradient id="wave-grad-back" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#2563EB" stop-opacity="0.2"/>
-      <stop offset="50%" stop-color="#1E3A8A" stop-opacity="0.4"/>
-      <stop offset="100%" stop-color="#2563EB" stop-opacity="0.2"/>
-    </linearGradient>
-
-    <linearGradient id="chip-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0F172A" stop-opacity="0.9"/>
-      <stop offset="100%" stop-color="#1E3A8A" stop-opacity="0.5"/>
-    </linearGradient>
-
-    <linearGradient id="chip-border" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.5"/>
-      <stop offset="100%" stop-color="#2563EB" stop-opacity="0.2"/>
-    </linearGradient>
-    
-    <linearGradient id="streak-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#38BDF8" stop-opacity="1"/>
+    <linearGradient id="beam-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#38BDF8" stop-opacity="0.25"/>
       <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
     </linearGradient>
 
+    <linearGradient id="wave-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563EB" stop-opacity="0.1"/>
+      <stop offset="50%" stop-color="#38BDF8" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#2563EB" stop-opacity="0.1"/>
+    </linearGradient>
+
+    <linearGradient id="chip-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#1E3A8A" stop-opacity="0.4"/>
+    </linearGradient>
+
+    <linearGradient id="chip-border" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563EB" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.3"/>
+    </linearGradient>
+
     <!-- Filters -->
-    <filter id="blur-massive" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="80"/>
-    </filter>
     <filter id="blur-large" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="30"/>
+      <feGaussianBlur stdDeviation="60"/>
     </filter>
-    <filter id="glow-fx" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="6" result="blur"/>
+    <filter id="blur-medium" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="25"/>
+    </filter>
+    <filter id="glow-cyan" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
       <feComposite in="SourceGraphic" in2="blur" operator="over"/>
     </filter>
-    <filter id="glow-subtle" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-    </filter>
-    <filter id="shadow-premium" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="24" stdDeviation="24" flood-color="#020617" flood-opacity="0.8"/>
-      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#020617" flood-opacity="0.5"/>
+    <filter id="card-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#020617" flood-opacity="0.9"/>
     </filter>
   </defs>
 
@@ -201,104 +187,93 @@
   <rect width="1280" height="320" fill="url(#bg-base)"/>
 
   <!-- Ambient Glowing Orbs -->
-  <g filter="url(#blur-massive)">
-    <circle cx="200" cy="80" r="200" fill="url(#glow-blue)" class="pulse-core"/>
-    <circle cx="1080" cy="220" r="240" fill="url(#glow-cyan)"/>
-    <circle cx="640" cy="300" r="180" fill="url(#glow-blue)"/>
+  <g filter="url(#blur-large)">
+    <circle cx="200" cy="80" r="180" fill="url(#orb-blue)" class="orb-animated"/>
+    <circle cx="1080" cy="220" r="220" fill="url(#orb-cyan)"/>
+    <circle cx="640" cy="300" r="160" fill="url(#orb-blue)" class="orb-animated"/>
   </g>
 
-  <!-- Grid Pattern Overlay (Subtle 15% opacity styling) -->
-  <g opacity="0.15" stroke="#1E3A8A" stroke-width="1">
+  <!-- Grid Pattern Overlay -->
+  <g opacity="0.04" stroke="#F8FAFC" stroke-width="1">
     <path d="M 0 40 L 1280 40 M 0 80 L 1280 80 M 0 120 L 1280 120 M 0 160 L 1280 160 M 0 200 L 1280 200 M 0 240 L 1280 240 M 0 280 L 1280 280"/>
     <path d="M 80 0 L 80 320 M 160 0 L 160 320 M 240 0 L 240 320 M 320 0 L 320 320 M 400 0 L 400 320 M 480 0 L 480 320 M 560 0 L 560 320 M 640 0 L 640 320 M 720 0 L 720 320 M 800 0 L 800 320 M 880 0 L 880 320 M 960 0 L 960 320 M 1040 0 L 1040 320 M 1120 0 L 1120 320 M 1200 0 L 1200 320"/>
   </g>
 
-  <!-- Background Floating Particles -->
-  <g fill="#38BDF8" filter="url(#glow-subtle)">
-    <circle cx="120" cy="280" r="2.5" class="p1" opacity="0.6"/>
-    <circle cx="340" cy="290" r="1.5" class="p2" opacity="0.8"/>
-    <circle cx="520" cy="260" r="3" class="p3" opacity="0.5"/>
-    <circle cx="780" cy="300" r="2" class="p4" opacity="0.7"/>
-    <circle cx="890" cy="250" r="1.5" class="p5" opacity="0.9"/>
-    <circle cx="1180" cy="270" r="2.5" class="p6" opacity="0.4"/>
-    <circle cx="250" cy="120" r="1" class="p7" opacity="0.8"/>
-    <circle cx="950" cy="90" r="2" class="p8" opacity="0.6"/>
+  <!-- Animated Background Wave -->
+  <g class="wave-animated" opacity="0.7">
+    <path d="M -640 260 Q -480 220 -320 260 T 0 260 T 320 260 T 640 260 T 960 260 T 1280 260 T 1600 260 T 1920 260 L 1920 320 L -640 320 Z" fill="url(#wave-grad)"/>
   </g>
 
-  <!-- Animated Background Waves -->
-  <g class="wave-back" opacity="0.10">
-    <path d="M -640 260 Q -480 200 -320 260 T 0 260 T 320 260 T 640 260 T 960 260 T 1280 260 T 1600 260 T 1920 260 L 1920 320 L -640 320 Z" fill="url(#wave-grad-back)"/>
+  <!-- Floating Particles -->
+  <g fill="#38BDF8">
+    <circle cx="140" cy="260" r="2" class="p1"/>
+    <circle cx="320" cy="280" r="1.5" class="p2"/>
+    <circle cx="480" cy="250" r="2.5" class="p3"/>
+    <circle cx="720" cy="290" r="1.8" class="p4"/>
+    <circle cx="910" cy="270" r="2" class="p5"/>
+    <circle cx="1140" cy="260" r="1.2" class="p6"/>
   </g>
-  <g class="wave-front" opacity="0.25">
-    <path d="M -640 280 Q -480 250 -320 280 T 0 280 T 320 280 T 640 280 T 960 280 T 1280 280 T 1600 280 T 1920 280 L 1920 320 L -640 320 Z" fill="url(#wave-grad-front)"/>
-  </g>
-
-  <!-- Subtle Inner Card Glow Blob -->
-  <rect x="40" y="30" width="1200" height="260" rx="24" fill="#2563EB" opacity="0.10" filter="url(#blur-large)"/>
 
   <!-- Light Beam Sweep Across Canvas -->
-  <rect x="0" y="0" width="160" height="320" fill="url(#wave-grad-front)" class="beam-animated" opacity="0.3"/>
+  <rect x="0" y="0" width="120" height="320" fill="url(#beam-grad)" class="beam-animated"/>
 
   <!-- Main Glassmorphism Panel -->
-  <g filter="url(#shadow-premium)">
-    <rect x="40" y="30" width="1200" height="260" rx="24" fill="url(#glass-bg)" stroke="url(#glass-border)" stroke-width="1.5"/>
-    <!-- Glass Top Inner Highlight -->
-    <path d="M 64 31.5 L 1216 31.5" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="1.5" stroke-linecap="round"/>
+  <g filter="url(#card-shadow)">
+    <rect x="40" y="30" width="1200" height="260" rx="20" fill="url(#glass-bg)" stroke="url(#glass-border)" stroke-width="1.5"/>
+    <!-- Glass Top Reflection Line -->
+    <path d="M 60 31 L 1220 31" stroke="#F8FAFC" stroke-opacity="0.3" stroke-width="1" stroke-linecap="round"/>
   </g>
 
   <!-- ================= LEFT CONTENT AREA ================= -->
-  
-  <g transform="translate(80, 0)">
-    
-    <!-- Subtitle Badge / Status Pill -->
-    <g transform="translate(0, 64)">
-      <rect x="0" y="0" width="245" height="28" rx="14" fill="#0F172A" fill-opacity="0.8" stroke="#2563EB" stroke-opacity="0.6" stroke-width="1"/>
-      <circle cx="16" cy="14" r="4.5" fill="#38BDF8" class="pulse-indicator" filter="url(#glow-subtle)"/>
-      <text x="34" y="18.5" class="text-subtitle" fill="#38BDF8">QA AUTOMATION ENGINEER</text>
+
+  <!-- Subtitle Badge / Status Pill -->
+  <g transform="translate(80, 62)">
+    <rect x="0" y="0" width="225" height="28" rx="14" fill="#0F172A" fill-opacity="0.7" stroke="#2563EB" stroke-opacity="0.6" stroke-width="1"/>
+    <circle cx="16" cy="14" r="4" fill="#38BDF8" class="pulse-indicator"/>
+    <text x="30" y="18" class="text-subtitle" fill="#38BDF8">QA AUTOMATION ENGINEER</text>
+  </g>
+
+  <!-- Title: Raghul L -->
+  <text x="80" y="134" class="text-title" fill="url(#title-grad)">Raghul L</text>
+
+  <!-- Tagline -->
+  <text x="80" y="168" class="text-tagline">Building Enterprise AI-powered Test Engineering Solutions</text>
+
+  <!-- Bottom Tech Stack Capsules -->
+  <g transform="translate(80, 206)">
+    <!-- Java -->
+    <g transform="translate(0, 0)">
+      <rect width="70" height="28" rx="14" fill="url(#chip-bg)" stroke="url(#chip-border)" stroke-width="1"/>
+      <circle cx="14" cy="14" r="3" fill="#38BDF8"/>
+      <text x="24" y="18" class="text-chip">Java</text>
     </g>
 
-    <!-- Title: Raghul L (Increased Size) -->
-    <text x="0" y="148" class="text-title" fill="url(#title-grad)">Raghul L</text>
+    <!-- Manual Testing -->
+    <g transform="translate(78, 0)">
+      <rect width="138" height="28" rx="14" fill="url(#chip-bg)" stroke="url(#chip-border)" stroke-width="1"/>
+      <circle cx="14" cy="14" r="3" fill="#38BDF8"/>
+      <text x="24" y="18" class="text-chip">Manual Testing</text>
+    </g>
 
-    <!-- Tagline (Updated Text) -->
-    <text x="0" y="188" class="text-tagline">Building AI-Powered Test Engineering Solutions</text>
+    <!-- Selenium -->
+    <g transform="translate(224, 0)">
+      <rect width="94" height="28" rx="14" fill="url(#chip-bg)" stroke="url(#chip-border)" stroke-width="1"/>
+      <circle cx="14" cy="14" r="3" fill="#38BDF8"/>
+      <text x="24" y="18" class="text-chip">Selenium</text>
+    </g>
 
-    <!-- Bottom Tech Stack Capsules (Perfectly Spaced & Centered Text) -->
-    <g transform="translate(0, 226)">
-      <!-- Java (Width: 76) -->
-      <g transform="translate(0, 0)">
-        <rect width="76" height="32" rx="16" fill="url(#chip-bg)" stroke="url(#chip-border)" stroke-width="1"/>
-        <circle cx="16" cy="16" r="4" fill="#38BDF8" filter="url(#glow-subtle)"/>
-        <text x="46" y="21" text-anchor="middle" class="text-chip">Java</text>
-      </g>
+    <!-- TestNG -->
+    <g transform="translate(326, 0)">
+      <rect width="84" height="28" rx="14" fill="url(#chip-bg)" stroke="url(#chip-border)" stroke-width="1"/>
+      <circle cx="14" cy="14" r="3" fill="#38BDF8"/>
+      <text x="24" y="18" class="text-chip">TestNG</text>
+    </g>
 
-      <!-- Manual Testing (Width: 146) -->
-      <g transform="translate(88, 0)">
-        <rect width="146" height="32" rx="16" fill="url(#chip-bg)" stroke="url(#chip-border)" stroke-width="1"/>
-        <circle cx="16" cy="16" r="4" fill="#38BDF8" filter="url(#glow-subtle)"/>
-        <text x="81" y="21" text-anchor="middle" class="text-chip">Manual Testing</text>
-      </g>
-
-      <!-- Selenium (Width: 104) -->
-      <g transform="translate(246, 0)">
-        <rect width="104" height="32" rx="16" fill="url(#chip-bg)" stroke="url(#chip-border)" stroke-width="1"/>
-        <circle cx="16" cy="16" r="4" fill="#38BDF8" filter="url(#glow-subtle)"/>
-        <text x="60" y="21" text-anchor="middle" class="text-chip">Selenium</text>
-      </g>
-
-      <!-- TestNG (Width: 94) -->
-      <g transform="translate(362, 0)">
-        <rect width="94" height="32" rx="16" fill="url(#chip-bg)" stroke="url(#chip-border)" stroke-width="1"/>
-        <circle cx="16" cy="16" r="4" fill="#38BDF8" filter="url(#glow-subtle)"/>
-        <text x="55" y="21" text-anchor="middle" class="text-chip">TestNG</text>
-      </g>
-
-      <!-- SQL (Width: 72) -->
-      <g transform="translate(468, 0)">
-        <rect width="72" height="32" rx="16" fill="url(#chip-bg)" stroke="url(#chip-border)" stroke-width="1"/>
-        <circle cx="16" cy="16" r="4" fill="#38BDF8" filter="url(#glow-subtle)"/>
-        <text x="44" y="21" text-anchor="middle" class="text-chip">SQL</text>
-      </g>
+    <!-- SQL -->
+    <g transform="translate(418, 0)">
+      <rect width="64" height="28" rx="14" fill="url(#chip-bg)" stroke="url(#chip-border)" stroke-width="1"/>
+      <circle cx="14" cy="14" r="3" fill="#38BDF8"/>
+      <text x="24" y="18" class="text-chip">SQL</text>
     </g>
   </g>
 
@@ -306,81 +281,63 @@
 
   <g transform="translate(1010, 160)">
     <!-- Ambient Core Glow -->
-    <circle cx="0" cy="0" r="85" fill="#38BDF8" fill-opacity="0.12" filter="url(#blur-large)" class="pulse-core"/>
-
-    <!-- Animated Light Streak / Energy Ring -->
-    <g class="spin-fast">
-      <circle cx="0" cy="0" r="105" fill="none" stroke="url(#streak-grad)" stroke-width="1.5" stroke-dasharray="80 600" stroke-linecap="round"/>
-      <!-- Leading bright point -->
-      <circle cx="105" cy="0" r="2.5" fill="#FFFFFF" filter="url(#glow-fx)"/>
-    </g>
+    <circle cx="0" cy="0" r="75" fill="#38BDF8" fill-opacity="0.15" filter="url(#blur-medium)" class="pulse-core"/>
 
     <!-- Outer Ring 1: Tech Dashes (Clockwise) -->
     <g class="spin-cw">
-      <circle cx="0" cy="0" r="88" fill="none" stroke="#38BDF8" stroke-opacity="0.4" stroke-width="1.5" stroke-dasharray="4 8 20 12"/>
-      <circle cx="88" cy="0" r="3.5" fill="#38BDF8" filter="url(#glow-fx)"/>
-      <circle cx="-88" cy="0" r="2.5" fill="#2563EB"/>
+      <circle cx="0" cy="0" r="88" fill="none" stroke="#38BDF8" stroke-opacity="0.3" stroke-width="1.5" stroke-dasharray="12 18 30 18"/>
+      <circle cx="88" cy="0" r="3" fill="#38BDF8" filter="url(#glow-cyan)"/>
+      <circle cx="-88" cy="0" r="3" fill="#2563EB"/>
     </g>
 
     <!-- Outer Ring 2: Gradient Segment (Counter-Clockwise) -->
     <g class="spin-ccw">
       <circle cx="0" cy="0" r="68" fill="none" stroke="url(#glass-border)" stroke-width="2" stroke-dasharray="40 25 80 25"/>
-      <circle cx="0" cy="-68" r="4" fill="#38BDF8" filter="url(#glow-fx)"/>
-      <circle cx="0" cy="68" r="3" fill="#F8FAFC"/>
+      <circle cx="0" cy="-68" r="3.5" fill="#38BDF8" filter="url(#glow-cyan)"/>
+      <circle cx="0" cy="68" r="2.5" fill="#F8FAFC"/>
     </g>
 
     <!-- Inner Static Orbit Line -->
-    <circle cx="0" cy="0" r="48" fill="none" stroke="#1E3A8A" stroke-width="1.5" stroke-opacity="0.7"/>
-
-    <!-- Orbiting Data Particles -->
-    <circle cx="0" cy="0" r="2" fill="#7DD3FC" class="orbit-dot-1" filter="url(#glow-subtle)"/>
-    <circle cx="0" cy="0" r="1.5" fill="#38BDF8" class="orbit-dot-2" filter="url(#glow-subtle)"/>
+    <circle cx="0" cy="0" r="48" fill="none" stroke="#1E3A8A" stroke-width="1" stroke-opacity="0.6"/>
 
     <!-- Central AI / QA Shield Hexagon Core -->
     <g class="pulse-core">
       <!-- Outer Hexagon Frame -->
-      <polygon points="0,-32 28,-16 28,16 0,32 -28,16 -28,-16" fill="#020617" stroke="#38BDF8" stroke-width="2.5" filter="url(#glow-fx)"/>
-      <!-- Inner Hexagon Fill with Gradient effect -->
-      <polygon points="0,-20 17,-10 17,10 0,20 -17,10 -17,-10" fill="#1E3A8A" fill-opacity="0.9" stroke="#60A5FA" stroke-width="1.5"/>
+      <polygon points="0,-28 24,-14 24,14 0,28 -24,14 -24,-14" fill="#0F172A" stroke="#38BDF8" stroke-width="2" filter="url(#glow-cyan)"/>
+      <!-- Inner Hexagon Fill -->
+      <polygon points="0,-18 15,-9 15,9 0,18 -15,9 -15,-9" fill="#1E3A8A" fill-opacity="0.8" stroke="#2563EB" stroke-width="1"/>
 
       <!-- Center Icon: Automated Checkmark + AI Sparkle -->
       <!-- Checkmark -->
-      <path d="M -8 2 L -2 8 L 10 -4" fill="none" stroke="#F8FAFC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M -7 1 L -2 6 L 8 -4" fill="none" stroke="#F8FAFC" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
       <!-- AI Sparkle Top Right -->
-      <path d="M 8 -16 Q 8 -10 14 -10 Q 8 -10 8 -4 Q 8 -10 2 -10 Q 8 -10 8 -16 Z" fill="#7DD3FC" filter="url(#glow-subtle)"/>
+      <path d="M 6 -14 Q 6 -8 12 -8 Q 6 -8 6 -2 Q 6 -8 0 -8 Q 6 -8 6 -14 Z" fill="#38BDF8"/>
     </g>
 
-    <!-- Satellite Floating Status Chips (Added smooth hover motion) -->
-    
+    <!-- Satellite Floating Status Chips -->
     <!-- Top Left Node: AI TEST -->
-    <g transform="translate(-115, -65)" class="float-ui" style="animation-delay: 0s;">
-      <rect width="80" height="24" rx="12" fill="#0F172A" fill-opacity="0.9" stroke="#38BDF8" stroke-opacity="0.7" stroke-width="1"/>
-      <text x="40" y="16" text-anchor="middle" class="text-metric" fill="#7DD3FC">AI TEST</text>
+    <g transform="translate(-105, -60)">
+      <rect width="76" height="22" rx="11" fill="#0F172A" fill-opacity="0.85" stroke="#38BDF8" stroke-opacity="0.5" stroke-width="1"/>
+      <text x="38" y="15" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" fill="#38BDF8" letter-spacing="0.5">AI TEST</text>
       <!-- Connecting Line -->
-      <path d="M 80 12 L 100 25" fill="none" stroke="#38BDF8" stroke-opacity="0.4" stroke-width="1" stroke-dasharray="3 3"/>
-      <circle cx="100" cy="25" r="2" fill="#38BDF8" opacity="0.6"/>
+      <line x1="60" y1="18" x2="80" y2="35" stroke="#38BDF8" stroke-opacity="0.3" stroke-width="1" stroke-dasharray="2 2"/>
     </g>
 
-    <!-- Right Node: PASSED (Enhanced Green Highlight) -->
-    <g transform="translate(80, -12)" class="float-ui" style="animation-delay: -2s;">
-      <rect width="82" height="24" rx="12" fill="#0F172A" fill-opacity="0.9" stroke="#22C55E" stroke-opacity="0.8" stroke-width="1.5"/>
-      <!-- Glowing dot -->
-      <circle cx="16" cy="12" r="3.5" fill="#22C55E">
-        <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
-      </circle>
-      <text x="49" y="16" text-anchor="middle" class="text-metric" fill="#4ADE80">PASSED</text>
+    <!-- Right Node: PASSED (Green Highlight) -->
+    <g transform="translate(75, -11)">
+      <rect width="72" height="22" rx="11" fill="#0F172A" fill-opacity="0.85" stroke="#22C55E" stroke-opacity="0.6" stroke-width="1"/>
+      <circle cx="14" cy="11" r="3" fill="#22C55E"/>
+      <text x="44" y="14.5" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" fill="#4ADE80" letter-spacing="0.5">PASSED</text>
       <!-- Connecting Line -->
-      <path d="M 0 12 L -20 12" fill="none" stroke="#22C55E" stroke-opacity="0.5" stroke-width="1" stroke-dasharray="3 3"/>
-      <circle cx="-20" cy="12" r="2" fill="#22C55E" opacity="0.6"/>
+      <line x1="0" y1="11" x2="-22" y2="11" stroke="#22C55E" stroke-opacity="0.3" stroke-width="1" stroke-dasharray="2 2"/>
     </g>
 
     <!-- Bottom Node: AUTOMATED -->
-    <g transform="translate(-80, 60)" class="float-ui" style="animation-delay: -4s;">
-      <rect width="96" height="24" rx="12" fill="#0F172A" fill-opacity="0.9" stroke="#2563EB" stroke-opacity="0.7" stroke-width="1"/>
-      <text x="48" y="16" text-anchor="middle" class="text-metric" fill="#93C5FD">AUTOMATION</text>
+    <g transform="translate(-70, 52)">
+      <rect width="88" height="22" rx="11" fill="#0F172A" fill-opacity="0.85" stroke="#2563EB" stroke-opacity="0.6" stroke-width="1"/>
+      <text x="44" y="15" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" fill="#60A5FA" letter-spacing="0.5">AUTOMATION</text>
       <!-- Connecting Line -->
-      <path d="M 48 0 L 35 -20" fill="none" stroke="#2563EB" stroke-opacity="0.4" stroke-width="1" stroke-dasharray="3 3"/>
-      <circle cx="35" cy="-20" r="2" fill="#2563EB" opacity="0.6"/>
+      <line x1="44" y1="0" x2="35" y2="-20" stroke="#2563EB" stroke-opacity="0.3" stroke-width="1" stroke-dasharray="2 2"/>
     </g>
   </g>
 
