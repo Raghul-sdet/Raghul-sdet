@@ -46,3 +46,12 @@ An enterprise AI-powered Test Engineering Platform that streamlines the complete
 **GitHub:** https://github.com/Raghul-sdet/AI-Test-Engineering-Platform
 
 ---
+# 💻 Core Skills
+
+| Category | Skills |
+|----------|--------|
+| **Programming** | Java |
+| **Testing** | Manual Testing, Selenium WebDriver, TestNG, REST Assured |
+| **Database** | SQL, JDBC |
+| **Build & CI/CD** | Maven, Docker, Jenkins |
+| **Version Control** | Git, GitHub |
