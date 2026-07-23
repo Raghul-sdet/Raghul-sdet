@@ -97,23 +97,19 @@ https://github.com/Raghul-sdet/AI-Test-Engineering-Platform
 # 📫 Connect
 
 <p align="center">
-
 <a href="https://www.linkedin.com/in/your-linkedin-id">
-<img src="https://skillicons.dev/icons?i=linkedin" height="45"/>
+<img src="https://cdn.simpleicons.org/linkedin/0A66C2" height="40"/>
 </a>
 
 &nbsp;&nbsp;
 
 <a href="mailto:raghul.sdet@gmail.com">
-<img src="https://img.icons8.com/color/48/gmail-new.png" height="45"/>
+<img src="https://cdn.simpleicons.org/gmail/EA4335" height="40"/>
 </a>
 
+&nbsp;&nbsp;
+
+<a href="https://github.com/Raghul-sdet">
+<img src="https://cdn.simpleicons.org/github/ffffff" height="40"/>
+</a>
 </p>
-
----
-
-<div align="center">
-
-⭐ Thanks for visiting my profile.
-
-</div>
