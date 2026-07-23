@@ -83,12 +83,11 @@ Enterprise AI-powered Test Engineering Platform built using Java 17.
 
 ## Database
 
+## 🗄️ Database
+
 <p>
-
-<img src="https://skillicons.dev/icons?i=mysql"/>
-
-<img src="https://img.shields.io/badge/JDBC-336791?style=for-the-badge"/>
-
+  <img src="https://img.shields.io/badge/SQL-336791?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/JDBC-007396?style=for-the-badge"/>
 </p>
 
 ---
