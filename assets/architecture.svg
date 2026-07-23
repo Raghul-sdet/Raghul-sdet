@@ -1,180 +1,235 @@
-```
-  .title { font-family: system-ui, -apple-system, sans-serif; font-weight: 800; font-size: 32px; fill: #F8FAFC; letter-spacing: -0.5px; }
-  .subtitle { font-family: system-ui, -apple-system, sans-serif; font-weight: 600; font-size: 14px; fill: #38BDF8; letter-spacing: 2.5px; text-transform: uppercase; }
-  
-  .node-text { font-family: system-ui, -apple-system, sans-serif; font-weight: 600; font-size: 15px; fill: #F8FAFC; letter-spacing: 0.3px; pointer-events: none; }
-  .node-subtext { font-family: system-ui, -apple-system, sans-serif; font-weight: 500; font-size: 13px; fill: #38BDF8; letter-spacing: 0.5px; pointer-events: none; }
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 650" width="1400" height="650">
+  <defs>
+    <style>
+      @keyframes sweepBeam {
+        0% { transform: translateX(-400px) skewX(-30deg); }
+        35%, 100% { transform: translateX(1800px) skewX(-30deg); }
+      }
+      @keyframes dashFlow {
+        from { stroke-dashoffset: 24; }
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes pulseNode {
+        0%, 100% { filter: drop-shadow(0 0 12px rgba(56,189,248,0.3)); transform: scale(1); }
+        50% { filter: drop-shadow(0 0 20px rgba(56,189,248,0.7)); transform: scale(1.02); }
+      }
+      @keyframes particleGlow {
+        0%, 100% { opacity: 0; filter: drop-shadow(0 0 2px #38BDF8); }
+        20%, 80% { opacity: 1; filter: drop-shadow(0 0 8px #38BDF8); }
+      }
 
-  .card-base { fill: url(#glass-fill); stroke: url(#glass-border); stroke-width: 1.5; }
-  .card-ai { fill: url(#glass-fill-ai); stroke: #38BDF8; stroke-width: 2; }
-  
-  .line-track { fill: none; stroke: #1E293B; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
-  .line-anim { fill: none; stroke: #2563EB; stroke-width: 2.5; stroke-dasharray: 6 6; stroke-linecap: round; stroke-linejoin: round; animation: dashFlow 1s linear infinite; }
+      .title { font-family: system-ui, -apple-system, sans-serif; font-weight: 800; font-size: 32px; fill: #F8FAFC; letter-spacing: -0.5px; }
+      .subtitle { font-family: system-ui, -apple-system, sans-serif; font-weight: 600; font-size: 14px; fill: #38BDF8; letter-spacing: 2.5px; text-transform: uppercase; }
+      
+      .node-text { font-family: system-ui, -apple-system, sans-serif; font-weight: 600; font-size: 15px; fill: #F8FAFC; letter-spacing: 0.3px; pointer-events: none; }
+      .node-subtext { font-family: system-ui, -apple-system, sans-serif; font-weight: 500; font-size: 13px; fill: #38BDF8; letter-spacing: 0.5px; pointer-events: none; }
 
-  .pulse { animation: pulseNode 4s ease-in-out infinite; transform-origin: center; }
-</style>
+      .card-base { fill: url(#glass-fill); stroke: url(#glass-border); stroke-width: 1.5; }
+      .card-ai { fill: url(#glass-fill-ai); stroke: #38BDF8; stroke-width: 2; }
+      
+      .line-track { fill: none; stroke: #1E293B; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+      .line-anim { fill: none; stroke: #2563EB; stroke-width: 2.5; stroke-dasharray: 6 6; stroke-linecap: round; stroke-linejoin: round; animation: dashFlow 1s linear infinite; }
 
-<linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-  <stop offset="0%" stop-color="#020617">
-    <animate attributeName="stop-color" values="#020617; #0F172A; #020617" dur="12s" repeatCount="indefinite" />
-  </stop>
-  <stop offset="100%" stop-color="#020617" />
-</linearGradient>
+      .pulse { animation: pulseNode 4s ease-in-out infinite; transform-origin: center; }
+    </style>
 
-<linearGradient id="glass-fill" x1="0%" y1="0%" x2="0%" y2="100%">
-  <stop offset="0%" stop-color="#F8FAFC" stop-opacity="0.06" />
-  <stop offset="100%" stop-color="#F8FAFC" stop-opacity="0.01" />
-</linearGradient>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617">
+        <animate attributeName="stop-color" values="#020617; #0F172A; #020617" dur="12s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
 
-<linearGradient id="glass-fill-ai" x1="0%" y1="0%" x2="0%" y2="100%">
-  <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.1" />
-  <stop offset="100%" stop-color="#2563EB" stop-opacity="0.02" />
-</linearGradient>
+    <linearGradient id="glass-fill" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC" stop-opacity="0.06" />
+      <stop offset="100%" stop-color="#F8FAFC" stop-opacity="0.01" />
+    </linearGradient>
+    
+    <linearGradient id="glass-fill-ai" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#2563EB" stop-opacity="0.02" />
+    </linearGradient>
 
-<linearGradient id="glass-border" x1="0%" y1="0%" x2="100%" y2="100%">
-  <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.5" />
-  <stop offset="50%" stop-color="#2563EB" stop-opacity="0.1" />
-  <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.4" />
-</linearGradient>
+    <linearGradient id="glass-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.5" />
+      <stop offset="50%" stop-color="#2563EB" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.4" />
+    </linearGradient>
 
-<linearGradient id="beam" x1="0%" y1="0%" x2="100%" y2="0%">
-  <stop offset="0%" stop-color="#38BDF8" stop-opacity="0" />
-  <stop offset="50%" stop-color="#38BDF8" stop-opacity="0.12" />
-  <stop offset="100%" stop-color="#38BDF8" stop-opacity="0" />
-</linearGradient>
+    <linearGradient id="beam" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0" />
+      <stop offset="50%" stop-color="#38BDF8" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0" />
+    </linearGradient>
 
-<radialGradient id="ambient-orb-1" cx="50%" cy="50%" r="50%">
-  <stop offset="0%" stop-color="#2563EB" stop-opacity="0.25" />
-  <stop offset="100%" stop-color="#020617" stop-opacity="0" />
-</radialGradient>
+    <radialGradient id="ambient-orb-1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2563EB" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#020617" stop-opacity="0" />
+    </radialGradient>
+    
+    <radialGradient id="ambient-orb-2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#020617" stop-opacity="0" />
+    </radialGradient>
 
-<radialGradient id="ambient-orb-2" cx="50%" cy="50%" r="50%">
-  <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.2" />
-  <stop offset="100%" stop-color="#020617" stop-opacity="0" />
-</radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.6" />
+    </filter>
 
-<filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-  <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.6" />
-</filter>
+    <filter id="heavy-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
 
-<filter id="heavy-glow" x="-50%" y="-50%" width="200%" height="200%">
-  <feGaussianBlur stdDeviation="8" result="blur" />
-  <feComposite in="SourceGraphic" in2="blur" operator="over" />
-</filter>
+    <marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 Z" fill="#38BDF8" />
+    </marker>
+  </defs>
 
-<marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-  <path d="M 0 1.5 L 9 5 L 0 8.5 Z" fill="#38BDF8" />
-</marker>
+  <rect width="1400" height="650" fill="url(#bg-grad)" />
 
-```
+  <g opacity="0.8">
+    <circle cx="350" cy="200" r="450" fill="url(#ambient-orb-1)" />
+    <circle cx="1050" cy="450" r="400" fill="url(#ambient-orb-2)" />
+    <circle cx="700" cy="350" r="350" fill="url(#ambient-orb-1)" opacity="0.6" />
+  </g>
 
-```
-<path class="line-track" d="M 700 380 L 700 395 Q 700 405 690 405 L 260 405 Q 250 405 250 415 L 250 420" />
-<path class="line-track" d="M 700 380 L 700 420" />
-<path class="line-track" d="M 700 380 L 700 395 Q 700 405 710 405 L 1140 405 Q 1150 405 1150 415 L 1150 420" />
+  <g opacity="0.04" stroke="#F8FAFC" stroke-width="1.5">
+    <pattern id="grid-pattern" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" />
+    </pattern>
+    <rect width="1400" height="650" fill="url(#grid-pattern)" />
+  </g>
 
-<path class="line-track" d="M 250 470 L 250 480 Q 250 490 260 490 L 690 490 Q 700 490 700 500" />
-<path class="line-track" d="M 700 470 L 700 500" />
-<path class="line-track" d="M 1150 470 L 1150 480 Q 1150 490 1140 490 L 710 490 Q 700 490 700 500" />
+  <rect x="0" y="0" width="200" height="650" fill="url(#beam)" style="animation: sweepBeam 9s cubic-bezier(0.4, 0, 0.2, 1) infinite;" />
 
-<path class="line-track" d="M 700 540 L 700 560" />
+  <g transform="translate(700, 45)" text-anchor="middle">
+    <text y="0" class="title">AI Test Engineering Platform</text>
+    <text y="28" class="subtitle">Enterprise QA Automation Framework</text>
+  </g>
 
-<!-- Animated Foreground Flows -->
-<path class="line-anim" marker-end="url(#arrowhead)" d="M 700 140 L 700 160" />
-<path class="line-anim" marker-end="url(#arrowhead)" d="M 700 200 L 700 220" />
-<path class="line-anim" marker-end="url(#arrowhead)" d="M 700 260 L 700 280" />
-<path class="line-anim" marker-end="url(#arrowhead)" d="M 700 320 L 700 340" />
+  <g>
+    <!-- Background Tracks -->
+    <path class="line-track" d="M 700 140 L 700 160" />
+    <path class="line-track" d="M 700 200 L 700 220" />
+    <path class="line-track" d="M 700 260 L 700 280" />
+    <path class="line-track" d="M 700 320 L 700 340" />
+    
+    <path class="line-track" d="M 700 380 L 700 395 Q 700 405 690 405 L 260 405 Q 250 405 250 415 L 250 420" />
+    <path class="line-track" d="M 700 380 L 700 420" />
+    <path class="line-track" d="M 700 380 L 700 395 Q 700 405 710 405 L 1140 405 Q 1150 405 1150 415 L 1150 420" />
+    
+    <path class="line-track" d="M 250 470 L 250 480 Q 250 490 260 490 L 690 490 Q 700 490 700 500" />
+    <path class="line-track" d="M 700 470 L 700 500" />
+    <path class="line-track" d="M 1150 470 L 1150 480 Q 1150 490 1140 490 L 710 490 Q 700 490 700 500" />
+    
+    <path class="line-track" d="M 700 540 L 700 560" />
 
-<path class="line-anim" marker-end="url(#arrowhead)" d="M 700 380 L 700 395 Q 700 405 690 405 L 260 405 Q 250 405 250 415 L 250 420" />
-<path class="line-anim" marker-end="url(#arrowhead)" d="M 700 380 L 700 420" />
-<path class="line-anim" marker-end="url(#arrowhead)" d="M 700 380 L 700 395 Q 700 405 710 405 L 1140 405 Q 1150 405 1150 415 L 1150 420" />
+    <!-- Animated Foreground Flows -->
+    <path class="line-anim" marker-end="url(#arrowhead)" d="M 700 140 L 700 160" />
+    <path class="line-anim" marker-end="url(#arrowhead)" d="M 700 200 L 700 220" />
+    <path class="line-anim" marker-end="url(#arrowhead)" d="M 700 260 L 700 280" />
+    <path class="line-anim" marker-end="url(#arrowhead)" d="M 700 320 L 700 340" />
+    
+    <path class="line-anim" marker-end="url(#arrowhead)" d="M 700 380 L 700 395 Q 700 405 690 405 L 260 405 Q 250 405 250 415 L 250 420" />
+    <path class="line-anim" marker-end="url(#arrowhead)" d="M 700 380 L 700 420" />
+    <path class="line-anim" marker-end="url(#arrowhead)" d="M 700 380 L 700 395 Q 700 405 710 405 L 1140 405 Q 1150 405 1150 415 L 1150 420" />
+    
+    <path class="line-anim" marker-end="url(#arrowhead)" d="M 250 470 L 250 480 Q 250 490 260 490 L 690 490 Q 700 490 700 500" />
+    <path class="line-anim" marker-end="url(#arrowhead)" d="M 700 470 L 700 500" />
+    <path class="line-anim" marker-end="url(#arrowhead)" d="M 1150 470 L 1150 480 Q 1150 490 1140 490 L 710 490 Q 700 490 700 500" />
+    
+    <path class="line-anim" marker-end="url(#arrowhead)" d="M 700 540 L 700 560" />
+  </g>
 
-<path class="line-anim" marker-end="url(#arrowhead)" d="M 250 470 L 250 480 Q 250 490 260 490 L 690 490 Q 700 490 700 500" />
-<path class="line-anim" marker-end="url(#arrowhead)" d="M 700 470 L 700 500" />
-<path class="line-anim" marker-end="url(#arrowhead)" d="M 1150 470 L 1150 480 Q 1150 490 1140 490 L 710 490 Q 700 490 700 500" />
+  <g filter="url(#heavy-glow)">
+    <circle r="4" fill="#F8FAFC" style="animation: particleGlow 3s infinite;">
+      <animateMotion dur="3s" repeatCount="indefinite" path="M 700 380 L 700 395 Q 700 405 690 405 L 260 405 Q 250 405 250 415 L 250 420" />
+    </circle>
+    <circle r="4" fill="#F8FAFC" style="animation: particleGlow 2.5s infinite;">
+      <animateMotion dur="2.5s" repeatCount="indefinite" path="M 700 380 L 700 420" />
+    </circle>
+    <circle r="4" fill="#F8FAFC" style="animation: particleGlow 3.5s infinite;">
+      <animateMotion dur="3.5s" repeatCount="indefinite" path="M 700 380 L 700 395 Q 700 405 710 405 L 1140 405 Q 1150 405 1150 415 L 1150 420" />
+    </circle>
+    
+    <circle r="4" fill="#38BDF8" style="animation: particleGlow 3s infinite;">
+      <animateMotion dur="3s" repeatCount="indefinite" path="M 250 470 L 250 480 Q 250 490 260 490 L 690 490 Q 700 490 700 500" />
+    </circle>
+    <circle r="4" fill="#38BDF8" style="animation: particleGlow 2.5s infinite;">
+      <animateMotion dur="2.5s" repeatCount="indefinite" path="M 700 470 L 700 500" />
+    </circle>
+    <circle r="4" fill="#38BDF8" style="animation: particleGlow 3.5s infinite;">
+      <animateMotion dur="3.5s" repeatCount="indefinite" path="M 1150 470 L 1150 480 Q 1150 490 1140 490 L 710 490 Q 700 490 700 500" />
+    </circle>
+  </g>
 
-<path class="line-anim" marker-end="url(#arrowhead)" d="M 700 540 L 700 560" />
+  <g filter="url(#shadow)">
+    
+    <g transform="translate(560, 100)">
+      <rect width="280" height="40" rx="10" class="card-base" />
+      <path d="M 12 1 L 268 1" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="1.5" stroke-linecap="round" />
+      <text x="140" y="25" text-anchor="middle" dominant-baseline="middle" class="node-text">Business Requirements</text>
+    </g>
 
-```
+    <g transform="translate(560, 160)">
+      <rect width="280" height="40" rx="10" class="card-base" />
+      <path d="M 12 1 L 268 1" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="1.5" stroke-linecap="round" />
+      <text x="140" y="25" text-anchor="middle" dominant-baseline="middle" class="node-text">Requirement Analysis</text>
+    </g>
 
-```
-<circle r="4" fill="#38BDF8" style="animation: particleGlow 3s infinite;">
-  <animateMotion dur="3s" repeatCount="indefinite" path="M 250 470 L 250 480 Q 250 490 260 490 L 690 490 Q 700 490 700 500" />
-</circle>
-<circle r="4" fill="#38BDF8" style="animation: particleGlow 2.5s infinite;">
-  <animateMotion dur="2.5s" repeatCount="indefinite" path="M 700 470 L 700 500" />
-</circle>
-<circle r="4" fill="#38BDF8" style="animation: particleGlow 3.5s infinite;">
-  <animateMotion dur="3.5s" repeatCount="indefinite" path="M 1150 470 L 1150 480 Q 1150 490 1140 490 L 710 490 Q 700 490 700 500" />
-</circle>
+    <g transform="translate(560, 220)" class="pulse" style="animation-delay: 0s;">
+      <rect width="280" height="40" rx="10" class="card-ai" />
+      <path d="M 12 1 L 268 1" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="1.5" stroke-linecap="round" />
+      <text x="140" y="25" text-anchor="middle" dominant-baseline="middle" class="node-text">AI Scenario Generation</text>
+    </g>
 
-```
+    <g transform="translate(560, 280)" class="pulse" style="animation-delay: -2s;">
+      <rect width="280" height="40" rx="10" class="card-ai" />
+      <path d="M 12 1 L 268 1" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="1.5" stroke-linecap="round" />
+      <text x="140" y="25" text-anchor="middle" dominant-baseline="middle" class="node-text">AI Test Case Generation</text>
+    </g>
 
-```
-<g transform="translate(560, 100)">
-  <rect width="280" height="40" rx="10" class="card-base" />
-  <path d="M 12 1 L 268 1" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="1.5" stroke-linecap="round" />
-  <text x="140" y="25" text-anchor="middle" dominant-baseline="middle" class="node-text">Business Requirements</text>
-</g>
+    <g transform="translate(560, 340)">
+      <rect width="280" height="40" rx="10" class="card-base" />
+      <path d="M 12 1 L 268 1" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="1.5" stroke-linecap="round" />
+      <text x="140" y="25" text-anchor="middle" dominant-baseline="middle" class="node-text">Enterprise Test Plan</text>
+    </g>
 
-<g transform="translate(560, 160)">
-  <rect width="280" height="40" rx="10" class="card-base" />
-  <path d="M 12 1 L 268 1" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="1.5" stroke-linecap="round" />
-  <text x="140" y="25" text-anchor="middle" dominant-baseline="middle" class="node-text">Requirement Analysis</text>
-</g>
+    <!-- Branch 1: UI -->
+    <g transform="translate(110, 420)">
+      <rect width="280" height="50" rx="12" class="card-base" />
+      <path d="M 14 1 L 266 1" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="1.5" stroke-linecap="round" />
+      <text x="140" y="22" text-anchor="middle" dominant-baseline="middle" class="node-text">UI Automation</text>
+      <text x="140" y="40" text-anchor="middle" dominant-baseline="middle" class="node-subtext">Selenium</text>
+    </g>
 
-<g transform="translate(560, 220)" class="pulse" style="animation-delay: 0s;">
-  <rect width="280" height="40" rx="10" class="card-ai" />
-  <path d="M 12 1 L 268 1" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="1.5" stroke-linecap="round" />
-  <text x="140" y="25" text-anchor="middle" dominant-baseline="middle" class="node-text">AI Scenario Generation</text>
-</g>
+    <!-- Branch 2: API -->
+    <g transform="translate(560, 420)">
+      <rect width="280" height="50" rx="12" class="card-base" />
+      <path d="M 14 1 L 266 1" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="1.5" stroke-linecap="round" />
+      <text x="140" y="22" text-anchor="middle" dominant-baseline="middle" class="node-text">API Automation</text>
+      <text x="140" y="40" text-anchor="middle" dominant-baseline="middle" class="node-subtext">REST Assured</text>
+    </g>
 
-<g transform="translate(560, 280)" class="pulse" style="animation-delay: -2s;">
-  <rect width="280" height="40" rx="10" class="card-ai" />
-  <path d="M 12 1 L 268 1" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="1.5" stroke-linecap="round" />
-  <text x="140" y="25" text-anchor="middle" dominant-baseline="middle" class="node-text">AI Test Case Generation</text>
-</g>
+    <!-- Branch 3: DB -->
+    <g transform="translate(1010, 420)">
+      <rect width="280" height="50" rx="12" class="card-base" />
+      <path d="M 14 1 L 266 1" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="1.5" stroke-linecap="round" />
+      <text x="140" y="22" text-anchor="middle" dominant-baseline="middle" class="node-text">Database Testing</text>
+      <text x="140" y="40" text-anchor="middle" dominant-baseline="middle" class="node-subtext">JDBC</text>
+    </g>
 
-<g transform="translate(560, 340)">
-  <rect width="280" height="40" rx="10" class="card-base" />
-  <path d="M 12 1 L 268 1" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="1.5" stroke-linecap="round" />
-  <text x="140" y="25" text-anchor="middle" dominant-baseline="middle" class="node-text">Enterprise Test Plan</text>
-</g>
+    <g transform="translate(560, 500)" class="pulse" style="animation-delay: -1s;">
+      <rect width="280" height="40" rx="10" class="card-ai" />
+      <path d="M 12 1 L 268 1" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="1.5" stroke-linecap="round" />
+      <text x="140" y="25" text-anchor="middle" dominant-baseline="middle" class="node-text">Execution Engine</text>
+    </g>
 
-<!-- Branch 1: UI -->
-<g transform="translate(110, 420)">
-  <rect width="280" height="50" rx="12" class="card-base" />
-  <path d="M 14 1 L 266 1" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="1.5" stroke-linecap="round" />
-  <text x="140" y="22" text-anchor="middle" dominant-baseline="middle" class="node-text">UI Automation</text>
-  <text x="140" y="40" text-anchor="middle" dominant-baseline="middle" class="node-subtext">Selenium</text>
-</g>
-
-<!-- Branch 2: API -->
-<g transform="translate(560, 420)">
-  <rect width="280" height="50" rx="12" class="card-base" />
-  <path d="M 14 1 L 266 1" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="1.5" stroke-linecap="round" />
-  <text x="140" y="22" text-anchor="middle" dominant-baseline="middle" class="node-text">API Automation</text>
-  <text x="140" y="40" text-anchor="middle" dominant-baseline="middle" class="node-subtext">REST Assured</text>
-</g>
-
-<!-- Branch 3: DB -->
-<g transform="translate(1010, 420)">
-  <rect width="280" height="50" rx="12" class="card-base" />
-  <path d="M 14 1 L 266 1" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="1.5" stroke-linecap="round" />
-  <text x="140" y="22" text-anchor="middle" dominant-baseline="middle" class="node-text">Database Testing</text>
-  <text x="140" y="40" text-anchor="middle" dominant-baseline="middle" class="node-subtext">JDBC</text>
-</g>
-
-<g transform="translate(560, 500)" class="pulse" style="animation-delay: -1s;">
-  <rect width="280" height="40" rx="10" class="card-ai" />
-  <path d="M 12 1 L 268 1" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="1.5" stroke-linecap="round" />
-  <text x="140" y="25" text-anchor="middle" dominant-baseline="middle" class="node-text">Execution Engine</text>
-</g>
-
-<g transform="translate(560, 560)">
-  <rect width="280" height="40" rx="10" class="card-base" />
-  <path d="M 12 1 L 268 1" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="1.5" stroke-linecap="round" />
-  <text x="140" y="25" text-anchor="middle" dominant-baseline="middle" class="node-text">Reports &amp; Analytics</text>
-</g>
-
-```
+    <g transform="translate(560, 560)">
+      <rect width="280" height="40" rx="10" class="card-base" />
+      <path d="M 12 1 L 268 1" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="1.5" stroke-linecap="round" />
+      <text x="140" y="25" text-anchor="middle" dominant-baseline="middle" class="node-text">Reports &amp; Analytics</text>
+    </g>
+  </g>
+</svg>
