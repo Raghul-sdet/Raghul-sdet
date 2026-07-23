@@ -1,115 +1,100 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&height=250&color=gradient&text=Raghul%20L&fontAlign=50&fontAlignY=40&fontSize=48&desc=QA%20Automation%20|%20Java%20|%20Software%20Testing&descAlign=50&descAlignY=62"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=220&color=0:2563EB,100:06B6D4&text=Raghul%20L&fontSize=42&fontColor=ffffff&desc=QA%20Automation%20•%20Java%20•%20Software%20Testing&descAlignY=68"/>
 
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=24&duration=3500&pause=1000&center=true&vCenter=true&width=700&lines=QA+Automation+Engineer;Java+Developer;Building+AI+Test+Engineering+Platform)](https://git.io/typing-svg)
+# Hi 👋 I'm Raghul
+
+### QA Automation • Java • Software Testing
+
+Building reliable automation frameworks and AI-powered testing solutions.
+
+<p>
+<a href="https://www.linkedin.com/in/raghul-l-b46627315/">
+<img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
+</a>
+
+<a href="mailto:raghul.sdet@gmail.com">
+<img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/>
+</a>
+
+<a href="https://github.com/Raghul-sdet">
+<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
+</a>
+</p>
 
 </div>
 
 ---
 
-# 👋 About Me
-
-```java
-public class Raghul {
-
-    String education = "Bachelor of Computer Applications";
-    String location = "Chennai, India";
-
-    String[] interests = {
-        "QA Automation",
-        "Software Testing",
-        "Java Development"
-    };
-
-}
-```
-
----
-
-# 🚀 Current Project
+# 🚀 Featured Project
 
 ## AI Test Engineering Platform
 
-Enterprise AI-powered QA Automation Framework that combines
+Enterprise AI-powered Test Engineering Platform developed using **Java 17** that combines AI-assisted requirement analysis with UI, API, and Database automation.
+
+### Highlights
 
 - 🤖 AI Requirement Analysis
 - 📝 AI Test Case Generation
-- 🌐 Selenium Automation
-- 🔗 REST API Testing
-- 🗄 Database Validation
+- 🌐 Selenium WebDriver Automation
+- 🔗 REST Assured API Automation
+- 🗄 JDBC Database Validation
 - 📊 Enterprise Excel Reports
 - ⚙ GitHub Actions
 - 🚀 Jenkins
 - 🐳 Docker
 
+### Repository
+
+➡️ **https://github.com/Raghul-sdet/AI-Test-Engineering-Platform**
+
 ---
 
 # 💻 Tech Stack
 
-<div align="center">
+<p align="center">
+<img src="https://skillicons.dev/icons?i=java,maven,git,github,docker,jenkins,vscode,idea,mysql" />
+</p>
 
-<img src="https://skillicons.dev/icons?i=java,git,github,maven,docker,jenkins,vscode,idea,mysql"/>
-
-</div>
-
-<br>
-
-<div align="center">
+<p align="center">
 
 <img src="https://img.shields.io/badge/Selenium-43B02A?style=flat-square&logo=selenium&logoColor=white"/>
 
 <img src="https://img.shields.io/badge/TestNG-EA4335?style=flat-square"/>
 
-<img src="https://img.shields.io/badge/REST%20Assured-009688?style=flat-square"/>
+<img src="https://img.shields.io/badge/REST_Assured-009688?style=flat-square"/>
 
-<img src="https://img.shields.io/badge/Manual%20Testing-2563EB?style=flat-square"/>
+<img src="https://img.shields.io/badge/Manual_Testing-2563EB?style=flat-square"/>
 
 <img src="https://img.shields.io/badge/SQL-336791?style=flat-square"/>
 
-<img src="https://img.shields.io/badge/JDBC-FF6F00?style=flat-square"/>
+<img src="https://img.shields.io/badge/JDBC-FF9800?style=flat-square"/>
 
-</div>
-
----
-
-# 📌 Featured Repository
-
-### 🤖 AI Test Engineering Platform
-
-> Enterprise AI-powered automation framework developed using Java 17.
-
-🔗 **Repository**
-
-https://github.com/Raghul-sdet/AI-Test-Engineering-Platform
-
----
-
-# 📈 GitHub Statistics
-
-<p align="center">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=Raghul-sdet&show_icons=true&theme=github_dark&hide_border=true&cache_seconds=1800"/>
-  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Raghul-sdet&layout=compact&theme=github_dark&hide_border=true&cache_seconds=1800"/>
 </p>
+
+---
+
+# 🌱 Currently Learning
+
+- Advanced Selenium Automation
+- AI-assisted Test Engineering
+- CI/CD Best Practices
+- Scalable Test Framework Design
 
 ---
 
 # 📫 Connect
 
-<p align="center">
-<a href="https://www.linkedin.com/in/raghul-l-b46627315">
-<img src="https://cdn.simpleicons.org/linkedin/0A66C2" height="40"/>
-</a>
+💼 LinkedIn  
+**https://www.linkedin.com/in/raghul-l-b46627315/**
 
-&nbsp;&nbsp;
+📧 Email  
+**raghul.sdet@gmail.com**
 
-<a href="mailto:raghul.sdet@gmail.com">
-<img src="https://cdn.simpleicons.org/gmail/EA4335" height="40"/>
-</a>
+---
 
-&nbsp;&nbsp;
+<div align="center">
 
-<a href="https://github.com/Raghul-sdet">
-<img src="https://cdn.simpleicons.org/github/ffffff" height="40"/>
-</a>
-</p>
+⭐ Thanks for visiting my profile!
+
+</div>
