@@ -70,24 +70,13 @@ Enterprise AI-powered Test Engineering Platform built using Java 17.
 <img src="https://skillicons.dev/icons?i=java"/>
 </p>
 
-<p>
-  <img src="https://img.shields.io/badge/Manual_Testing-0052CC?style=for-the-badge&logo=checkmarx&logoColor=white"/>
-</p>
-
----
-
-## Automation Testing
+## 🧪 Testing
 
 <p>
-
-<img src="https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white"/>
-
-<img src="https://img.shields.io/badge/TestNG-FF6C37?style=for-the-badge"/>
-
-<img src="https://img.shields.io/badge/REST_Assured-009688?style=for-the-badge"/>
-
-<img src="https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white"/>
-
+  <img src="https://img.shields.io/badge/Manual_Testing-007ACC?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white"/>
+  <img src="https://img.shields.io/badge/TestNG-FF6C37?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/REST_Assured-009688?style=for-the-badge"/>
 </p>
 
 ---
